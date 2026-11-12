@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ArrowDown, ArrowUpRight } from 'lucide-astro';
+import '../styles/global.css';
+
+const projects = [
+  { number: '01', name: 'Northstar', description: 'A calmer way for distributed teams to turn messy ideas into a shared direction.', tags: ['Product design', 'React', 'Systems'], visual: 'blue' },
+  { number: '02', name: 'Pulse', description: 'A live operations dashboard that makes complex signals easier to read at a glance.', tags: ['Data viz', 'TypeScript', 'Motion'], visual: 'orange' },
+  { number: '03', name: 'Common Ground', description: 'A digital toolkit for finding focus when the blank page feels too loud.', tags: ['Frontend', 'UX', 'Research'], visual: 'violet' },
+];
+const capabilities = [
+  ['01', 'Frontend engineering', 'React · TypeScript · HTML/CSS · Accessibility'],
+  ['02', 'Product thinking', 'Prototyping · UX · Design systems · Research'],
+  ['03', 'Reliable delivery', 'Testing · APIs · Documentation · Collaboration'],
+];
+---
+<Layout>
+  <div class="loader" aria-hidden="true"><div class="loader-top"><span>SJ / 2026</span><span>Portfolio 01</span></div><div class="loader-center"><b>SJ</b><span>Sreejita</span></div><div class="loader-bottom"><span>Loading a thoughtful interface</span><span class="percent">00%</span></div><div class="loader-line"><i></i></div></div>
+  <div class="site">
+    <header class="nav"><a class="brand" href="#top">SJ<span>.</span></a><div class="availability"><i></i> Available for opportunities</div><a href="mailto:hello@sreejita.dev">Let's talk <ArrowUpRight size={13} /></a></header>
+    <aside class="progress" aria-hidden="true"><i></i><span>SCROLL TO EXPLORE</span></aside>
+    <main id="top">
+      <section class="hero section"><div class="eyebrow"><span>01 / INTRODUCTION</span><span>Software engineer · Limerick, IE</span></div><div><p class="kicker reveal">I build <em>quietly powerful</em> things for the web.</p><h1><span class="reveal">Code with</span><span class="indent reveal">a point<span class="accent">.</span></span></h1></div><div class="hero-foot reveal"><p>Interfaces that feel considered.<br />Systems that hold up.</p><a class="circle" href="#work" aria-label="Scroll to selected work"><ArrowDown size={20} /></a><span>Scroll to begin<br /><small>(01—05)</small></span></div><div class="orb"></div></section>
+      <section class="statement section"><div class="index">02 / APPROACH</div><div><p class="label reveal">A little about the way I work</p><h2 class="reveal">The best digital work is <span>felt</span> before it's explained.</h2><div class="details reveal"><p>I’m a software engineer who cares about the space between an idea and the moment it becomes useful. My work lives at the intersection of clear thinking, careful interfaces, and dependable code.</p><p class="mono">BUILDING FOR HUMANS<br />SINCE 2021</p></div></div></section>
+      <section class="work section" id="work"><div class="work-head"><div class="index">03 / SELECTED WORK</div><p class="label">A few things I’ve made</p></div><div class="projects">{projects.map((project, index) => <article class:list={['project', 'reveal', { reverse: index === 1 }]}><div class:list={['visual', project.visual]}>{index === 0 && <div class="window"><small>01</small><b>Field notes</b><i></i><i></i><i></i></div>}{index === 1 && <><div class="orbit one"></div><div class="orbit two"></div><strong>DATA<br /><small>IN MOTION</small></strong></>}{index === 2 && <b>MAKE<br /><em>SPACE</em><br />FOR IDEAS</b>}</div><div><small class="number">{project.number}</small><h3>{project.name}</h3><p>{project.description}</p><div class="tags">{project.tags.map((tag) => <span>{tag}</span>)}</div></div></article>)}</div></section>
+      <section class="capabilities section"><div class="index">04 / CAPABILITIES</div><div class="cap-body"><h2 class="reveal">Good work sits<br /><span>in the details.</span></h2><div class="cap-list reveal">{capabilities.map(([number, title, text]) => <div><small>{number}</small><b>{title}</b><p>{text}</p></div>)}</div></div></section>
+      <section class="contact section"><div class="index">05 / NEXT</div><div><p class="label reveal">Have a good problem?</p><h2 class="contact-title reveal">Let’s make<br /><span>something matter.</span></h2><a class="email reveal" href="mailto:hello@sreejita.dev">hello@sreejita.dev <ArrowUpRight size={22} /></a></div><footer><span>© Sreejita / 2026</span><span>Built with intention</span><a href="#top">Back to top <ArrowUp size={12} /></a></footer></section>
+    </main>
+  </div>
+  <script src="../scripts/portfolio.ts"></script>
+</Layout>

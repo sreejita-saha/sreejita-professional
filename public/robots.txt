@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sreejita.dev/sitemap-index.xml
