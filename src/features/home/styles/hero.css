@@ -1,9 +1,13 @@
 /* features/home/sections/Hero.astro */
 .hero {
+  --hero-gutter: clamp(1rem, 2vw, 2rem);
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-rows: auto minmax(16rem, 1fr) auto;
+  gap: clamp(2.5rem, 5vw, 5rem);
   min-height: 100svh;
-  padding: 98px 16px 0;
+  padding: clamp(7rem, 12vh, 9rem) var(--hero-gutter) clamp(2rem, 4vw, 3rem);
+  container-type: inline-size;
   isolation: isolate;
   color: var(--color-on-dark);
   background: #090a09;
@@ -34,12 +38,9 @@
 }
 
 .hero-copy {
-  position: absolute;
-  top: 76px;
-  left: 50%;
   width: min(250px, 34vw);
+  justify-self: center;
   text-align: center;
-  transform: translateX(-50%);
 }
 
 .hero-copy p {
@@ -69,21 +70,16 @@
 .signal-mark i:nth-child(3) { --angle: -60deg; }
 
 .hero-wordmark {
-  position: absolute;
-  top: 18%;
-  left: 50%;
-  width: min(150%, 6000px);
-  height: clamp(18rem, 19vw, 19rem);
+  width: min(100%, 1700px);
   margin: 0;
+  justify-self: center;
   line-height: 0;
-  transform: translateX(-50%);
 }
 
 .hero-wordmark img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: fill;
+  height: auto;
   opacity: .58;
   filter: grayscale(1) invert(1) brightness(1.22) contrast(.82);
 }
@@ -167,10 +163,12 @@
   font: 9px/1.15 var(--font-mono);
 }
 
-@media (max-width: 720px) {
+@container (width < 45rem) {
   .hero {
-    min-height: max(750px, 100svh);
-    padding: 90px 12px 0;
+    grid-template-rows: auto auto auto;
+    gap: clamp(2.5rem, 10vw, 4rem);
+    min-height: auto;
+    padding: 6rem var(--hero-gutter) 2rem;
   }
 
   .hero::after {
@@ -178,19 +176,16 @@
   }
 
   .hero-copy {
-    top: 76px;
-    width: 205px;
+    width: min(100%, 22rem);
   }
 
   .hero-wordmark {
-    top: 28%;
-    width: 116%;
-    height: clamp(11rem, 40vw, 15rem);
+    width: 100%;
   }
 
   .hero-bottom {
-    grid-template-columns: 108px 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
     padding: 19px 0 22px;
   }
 
@@ -211,10 +206,6 @@
     margin-bottom: 18px;
     font-size: clamp(1.22rem, 5vw, 1.7rem);
     line-height: .96;
-  }
-
-  .hero-manifesto > p + p {
-    display: none;
   }
 
   .signature {

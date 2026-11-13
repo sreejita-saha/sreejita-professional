@@ -19,7 +19,7 @@
   --font-sans: "Manrope", system-ui, sans-serif;
   --font-mono: "DM Mono", monospace;
   --content-width: 1240px;
-  --page-gutter: 2rem;
+  --page-gutter: clamp(1rem, 3vw, 2rem);
 }
 
 /* Follow the visitor's OS/browser preference. */

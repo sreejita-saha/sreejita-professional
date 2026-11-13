@@ -8,14 +8,9 @@
   background: var(--color-canvas);
 }
 
-.section {
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 9rem var(--page-gutter);
-}
-
-@media (max-width: 720px) {
-  :root {
-    --page-gutter: 1.25rem;
-  }
+.page-section {
+  width: 100%;
+  margin: 0;
+  padding-block: clamp(4.5rem, 10vw, 9rem);
+  padding-inline: max(var(--page-gutter), calc((100vw - var(--content-width)) / 2));
 }

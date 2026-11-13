@@ -32,6 +32,7 @@
 .contact footer {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-top: 10rem;
   font: 10px var(--font-mono);
@@ -39,7 +40,7 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 720px) {
+@container (width < 50rem) {
   .contact footer {
     flex-wrap: wrap;
     gap: 1rem;

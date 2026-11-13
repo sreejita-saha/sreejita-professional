@@ -1,12 +1,13 @@
 ---
 import type { Project } from '../data';
+import Section from '../../../components/ui/Section.astro';
 
 interface Props { projects: Project[] }
 const { projects } = Astro.props;
 ---
 
 <!-- Homepage work section. -->
-<section class="work section" id="work">
+<Section class="work" id="work">
   <div class="work-head"><div class="index">03 / SELECTED WORK</div><p class="label">A few things I’ve made</p></div>
   <div class="projects">
     {projects.map((project, index) => (
@@ -25,4 +26,4 @@ const { projects } = Astro.props;
       </article>
     ))}
   </div>
-</section>
+</Section>

@@ -1,12 +1,13 @@
 ---
 import type { Capability } from '../data';
+import Section from '../../../components/ui/Section.astro';
 
 interface Props { capabilities: Capability[] }
 const { capabilities } = Astro.props;
 ---
 
 <!-- Homepage capabilities section. -->
-<section class="capabilities section" id="capabilities">
+<Section class="capabilities" id="capabilities">
   <div class="index">04 / CAPABILITIES</div>
   <div class="cap-body">
     <h2 class="reveal">Good work sits<br /><span>in the details.</span></h2>
@@ -14,4 +15,4 @@ const { capabilities } = Astro.props;
       {capabilities.map((capability) => <div><small>{capability.number}</small><b>{capability.title}</b><p>{capability.description}</p></div>)}
     </div>
   </div>
-</section>
+</Section>
