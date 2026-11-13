@@ -21,14 +21,16 @@
     min-height: max(750px, calc(100svh - 14px));
     padding: 90px 12px 0;
     background:
-      radial-gradient(ellipse 110% 14% at 50% 31%, #ccd0ca36 0%, #65706b1d 35%, transparent 72%),
-      linear-gradient(180deg, #303936 0%, #0e1110 49%, #090a09 100%);
+      radial-gradient(ellipse 110% 14% at 50% 31%, #e0e1dc32 0%, #a4a6a11d 35%, transparent 72%),
+      linear-gradient(180deg, #393b39 0%, #121313 49%, #090a09 100%);
   }
 
   .hero-copy { width: 205px; }
 
+  .hero-copy { top: 76px; }
+
   .hero-wordmark {
-    top: 35%;
+    top: 29%;
     font-size: clamp(3.9rem, 19vw, 7rem);
   }
 
