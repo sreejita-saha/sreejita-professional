@@ -1,3 +1,4 @@
+// Home-page content model and data.
 export type ProjectVisual = 'blue' | 'orange' | 'violet';
 
 export interface Project {

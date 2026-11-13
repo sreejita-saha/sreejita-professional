@@ -1,15 +1,24 @@
-/* HeroSection.astro */
+/* features/home/sections/Hero.astro */
 .hero {
   position: relative;
   display: flex;
-  min-height: calc(100svh - 28px);
+  min-height: 100svh;
   padding: 98px 16px 0;
   isolation: isolate;
   color: var(--color-on-dark);
+  background: #090a09;
+}
+
+.hero::after {
+  position: absolute;
+  z-index: -2;
+  inset: -24px;
   background:
-    radial-gradient(ellipse 60% 16% at 53% 32%, #e0e1dc35 0%, #a4a6a124 33%, transparent 72%),
-    radial-gradient(ellipse 90% 35% at 46% 4%, #b9bbb535 0%, #282a29 65%, transparent 100%),
-    linear-gradient(180deg, #393b39 0%, #121313 47%, #090a09 100%);
+    linear-gradient(180deg, rgb(9 10 9 / 28%) 0%, rgb(9 10 9 / 18%) 37%, rgb(5 6 5 / 92%) 100%),
+    url('/hero-background.png') center / cover no-repeat;
+  content: '';
+  filter: blur(14px) brightness(.55) contrast(.92);
+  pointer-events: none;
 }
 
 .hero::before {
@@ -61,9 +70,10 @@
 
 .hero-wordmark {
   position: absolute;
-  top: 20%;
+  top: 18%;
   left: 50%;
-  width: min(83%, 1200px);
+  width: min(150%, 6000px);
+  height: clamp(18rem, 19vw, 19rem);
   margin: 0;
   line-height: 0;
   transform: translateX(-50%);
@@ -72,8 +82,9 @@
 .hero-wordmark img {
   display: block;
   width: 100%;
-  height: auto;
-  opacity: .64;
+  height: 100%;
+  object-fit: fill;
+  opacity: .58;
   filter: grayscale(1) invert(1) brightness(1.22) contrast(.82);
 }
 
@@ -158,11 +169,12 @@
 
 @media (max-width: 720px) {
   .hero {
-    min-height: max(750px, calc(100svh - 14px));
+    min-height: max(750px, 100svh);
     padding: 90px 12px 0;
-    background:
-      radial-gradient(ellipse 110% 14% at 50% 31%, #e0e1dc32 0%, #a4a6a11d 35%, transparent 72%),
-      linear-gradient(180deg, #393b39 0%, #121313 49%, #090a09 100%);
+  }
+
+  .hero::after {
+    filter: blur(10px) brightness(.48) contrast(.92);
   }
 
   .hero-copy {
@@ -171,8 +183,9 @@
   }
 
   .hero-wordmark {
-    top: 24%;
-    width: min(88%, 540px);
+    top: 28%;
+    width: 116%;
+    height: clamp(11rem, 40vw, 15rem);
   }
 
   .hero-bottom {

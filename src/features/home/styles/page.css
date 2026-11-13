@@ -1,11 +1,10 @@
-/* Global page frame and shared section spacing. */
+/* Home-page frame and shared section spacing. */
 .site {
-  padding: 14px;
+  min-height: 100svh;
 }
 
 .site main {
   overflow: clip;
-  border-radius: 14px;
   background: var(--color-canvas);
 }
 
@@ -18,13 +17,5 @@
 @media (max-width: 720px) {
   :root {
     --page-gutter: 1.25rem;
-  }
-
-  .site {
-    padding: 7px;
-  }
-
-  .site main {
-    border-radius: 8px;
   }
 }

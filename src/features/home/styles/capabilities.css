@@ -1,4 +1,4 @@
-/* CapabilitiesSection.astro */
+/* features/home/sections/Capabilities.astro */
 .capabilities {
   display: grid;
   grid-template-columns: 23% 1fr;

@@ -1,4 +1,4 @@
-/** Completes the optional page-intro state without delaying reduced-motion users. */
+/** Completes the home-page intro state without delaying reduced-motion users. */
 export function initialiseLoading() {
   const loader = document.querySelector<HTMLElement>('.loader');
   const site = document.querySelector<HTMLElement>('.site');

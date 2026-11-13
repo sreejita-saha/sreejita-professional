@@ -1,4 +1,4 @@
-/* AboutSection.astro */
+/* features/home/sections/About.astro */
 .statement {
   display: grid;
   grid-template-columns: 23% 1fr;

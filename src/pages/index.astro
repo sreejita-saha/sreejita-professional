@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import AboutSection from '../components/portfolio/AboutSection.astro';
-import CapabilitiesSection from '../components/portfolio/CapabilitiesSection.astro';
-import ContactSection from '../components/portfolio/ContactSection.astro';
-import HeroSection from '../components/portfolio/HeroSection.astro';
-import SiteHeader from '../components/portfolio/SiteHeader.astro';
-import WorkSection from '../components/portfolio/WorkSection.astro';
-import { capabilities, projects } from '../data/portfolio';
+import SiteHeader from '../components/layout/SiteHeader.astro';
+import About from '../features/home/sections/About.astro';
+import Capabilities from '../features/home/sections/Capabilities.astro';
+import Contact from '../features/home/sections/Contact.astro';
+import Hero from '../features/home/sections/Hero.astro';
+import Work from '../features/home/sections/Work.astro';
+import { capabilities, projects } from '../features/home/data';
 import '../styles/global.css';
 ---
 
@@ -21,13 +21,13 @@ import '../styles/global.css';
   <div class="site">
     <SiteHeader />
     <main id="top">
-      <HeroSection />
-      <AboutSection />
-      <WorkSection projects={projects} />
-      <CapabilitiesSection capabilities={capabilities} />
-      <ContactSection />
+      <Hero />
+      <About />
+      <Work projects={projects} />
+      <Capabilities capabilities={capabilities} />
+      <Contact />
     </main>
   </div>
 
-  <script src="../scripts/portfolio.ts"></script>
+  <script src="../features/home/scripts/index.ts"></script>
 </Layout>

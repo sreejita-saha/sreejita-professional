@@ -1,4 +1,4 @@
-/** Reveals editorial content once it enters the viewport. */
+/** Reveals home-page editorial content once it enters the viewport. */
 export function initialiseRevealEffects() {
   const revealElements = document.querySelectorAll<HTMLElement>('.reveal');
   if (!revealElements.length) return;

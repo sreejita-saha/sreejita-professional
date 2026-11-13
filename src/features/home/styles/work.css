@@ -1,4 +1,4 @@
-/* WorkSection.astro */
+/* features/home/sections/Work.astro */
 .work {
   max-width: none;
   padding-right: max(var(--page-gutter), calc((100vw - var(--content-width)) / 2));

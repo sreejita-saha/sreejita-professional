@@ -1,4 +1,4 @@
-/* ContactSection.astro */
+/* features/home/sections/Contact.astro */
 .contact {
   max-width: none;
   background: var(--color-contact);
