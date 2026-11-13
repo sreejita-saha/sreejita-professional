@@ -1,18 +1,18 @@
 ---
 // Global site navigation.
-import { ArrowUpRight, Volume2 } from 'lucide-astro';
 ---
 
 <header class="nav">
-  <a class="brand" href="#top" aria-label="Sreejita — home">SJ<span>°</span></a>
-  <nav aria-label="Primary navigation">
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#capabilities">Services</a>
-    <a href="#contact">Contact</a>
+  <a class="brand" href="/" aria-label="Sreejita — home">
+    <img src="/favicon.svg" alt="" width="28" height="28" />
+  </a>
+  <nav class="line-sidebar" aria-label="Primary navigation" data-line-sidebar>
+    <ul class="line-sidebar__list">
+      <li class="line-sidebar__item" data-sidebar-item><a href="#top"><span class="line-sidebar__marker" aria-hidden="true"></span><span class="line-sidebar__label"><span class="line-sidebar__index">01</span><span>Overview</span></span></a></li>
+      <li class="line-sidebar__item" data-sidebar-item><a href="#about"><span class="line-sidebar__marker" aria-hidden="true"></span><span class="line-sidebar__label"><span class="line-sidebar__index">02</span><span>About</span></span></a></li>
+      <li class="line-sidebar__item" data-sidebar-item><a href="#work"><span class="line-sidebar__marker" aria-hidden="true"></span><span class="line-sidebar__label"><span class="line-sidebar__index">03</span><span>Work</span></span></a></li>
+      <li class="line-sidebar__item" data-sidebar-item><a href="#capabilities"><span class="line-sidebar__marker" aria-hidden="true"></span><span class="line-sidebar__label"><span class="line-sidebar__index">04</span><span>Services</span></span></a></li>
+      <li class="line-sidebar__item" data-sidebar-item><a href="#contact"><span class="line-sidebar__marker" aria-hidden="true"></span><span class="line-sidebar__label"><span class="line-sidebar__index">05</span><span>Contact</span></span></a></li>
+    </ul>
   </nav>
-  <div class="nav-actions">
-    <button class="sound-control" type="button" aria-label="Sound is off"><Volume2 size={12} /></button>
-    <a class="project-link" href="mailto:hello@sreejita.dev">Start a project <ArrowUpRight size={12} /></a>
-  </div>
 </header>
