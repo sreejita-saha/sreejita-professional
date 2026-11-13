@@ -1,2 +1,4 @@
-@import 'tailwindcss';
-@import '../../styles.css';
+@import "./tokens.css";
+@import "./base.css";
+@import "./portfolio.css";
+@import "./responsive.css";

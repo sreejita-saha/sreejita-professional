@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 82% 8%,
+      color-mix(in srgb, var(--color-accent) 14%, transparent),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 0% 52%,
+      color-mix(in srgb, var(--color-accent) 8%, transparent),
+      transparent 34%
+    ),
+    var(--color-canvas);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+a {
+  color: inherit;
+}
+.loader {
+  display: none;
+}
+.site,
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

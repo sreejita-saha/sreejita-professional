@@ -1,0 +1,16 @@
+---
+import type { Capability } from '../../data/portfolio';
+
+interface Props { capabilities: Capability[] }
+const { capabilities } = Astro.props;
+---
+
+<section class="capabilities section">
+  <div class="index">04 / CAPABILITIES</div>
+  <div class="cap-body">
+    <h2 class="reveal">Good work sits<br /><span>in the details.</span></h2>
+    <div class="cap-list reveal">
+      {capabilities.map((capability) => <div><small>{capability.number}</small><b>{capability.title}</b><p>{capability.description}</p></div>)}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+import type { Project } from '../../data/portfolio';
+
+interface Props { projects: Project[] }
+const { projects } = Astro.props;
+---
+
+<section class="work section" id="work">
+  <div class="work-head"><div class="index">03 / SELECTED WORK</div><p class="label">A few things I’ve made</p></div>
+  <div class="projects">
+    {projects.map((project, index) => (
+      <article class:list={['project', 'reveal', { reverse: index === 1 }]}>
+        <div class:list={['visual', project.visual]}>
+          {index === 0 && <div class="window"><small>01</small><b>Field notes</b><i></i><i></i><i></i></div>}
+          {index === 1 && <><div class="orbit one"></div><div class="orbit two"></div><strong>DATA<br /><small>IN MOTION</small></strong></>}
+          {index === 2 && <b>MAKE<br /><em>SPACE</em><br />FOR IDEAS</b>}
+        </div>
+        <div>
+          <small class="number">{project.number}</small>
+          <h3>{project.name}</h3>
+          <p>{project.description}</p>
+          <div class="tags">{project.tags.map((tag) => <span>{tag}</span>)}</div>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
