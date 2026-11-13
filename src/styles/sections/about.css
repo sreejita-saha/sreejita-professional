@@ -1,0 +1,46 @@
+/* AboutSection.astro */
+.statement {
+  display: grid;
+  grid-template-columns: 23% 1fr;
+  gap: 8vw;
+  border-top: 1px solid var(--color-border);
+}
+
+.statement h2 {
+  max-width: 810px;
+  margin: 4.5rem 0 6rem;
+  font-size: clamp(3rem, 7vw, 7.2rem);
+  font-weight: 500;
+  line-height: .9;
+  letter-spacing: -.1em;
+}
+
+.statement h2 span {
+  color: var(--color-accent);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: minmax(0, 410px) 1fr;
+  gap: 6vw;
+}
+
+.details p:first-child {
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 720px) {
+  .statement {
+    display: block;
+  }
+
+  .statement h2 {
+    margin: 3rem 0;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

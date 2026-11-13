@@ -1,0 +1,52 @@
+/* ContactSection.astro */
+.contact {
+  max-width: none;
+  background: var(--color-contact);
+  color: var(--color-ink-on-light);
+}
+
+.contact .index,
+.contact .label,
+.contact-title span {
+  color: var(--color-accent-strong);
+}
+
+.contact-title {
+  margin: 5rem 0 4rem;
+  font-size: clamp(4rem, 10vw, 11rem);
+  font-weight: 600;
+  line-height: .8;
+  letter-spacing: -.12em;
+}
+
+.email {
+  display: inline-flex;
+  gap: .5rem;
+  align-items: center;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--color-ink-on-light);
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.contact footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 10rem;
+  font: 10px var(--font-mono);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .contact footer {
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 8rem;
+  }
+
+  .contact footer span:nth-child(2) {
+    display: none;
+  }
+}

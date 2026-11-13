@@ -1,0 +1,58 @@
+/* CapabilitiesSection.astro */
+.capabilities {
+  display: grid;
+  grid-template-columns: 23% 1fr;
+  gap: 8vw;
+  border-top: 1px solid var(--color-border);
+}
+
+.capabilities h2 {
+  max-width: 810px;
+  margin: 4.5rem 0 6rem;
+  font-size: clamp(3rem, 7vw, 7.2rem);
+  font-weight: 500;
+  line-height: .9;
+  letter-spacing: -.1em;
+}
+
+.capabilities h2 span {
+  color: var(--color-accent);
+}
+
+.cap-list {
+  border-top: 1px solid var(--color-border);
+}
+
+.cap-list div {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: .6rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cap-list small {
+  color: var(--color-accent);
+  font: 10px var(--font-mono);
+}
+
+.cap-list b {
+  font-weight: 500;
+}
+
+.cap-list p {
+  grid-column: 2;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: .9rem;
+}
+
+@media (max-width: 720px) {
+  .capabilities {
+    display: block;
+  }
+
+  .capabilities h2 {
+    margin: 3rem 0;
+  }
+}

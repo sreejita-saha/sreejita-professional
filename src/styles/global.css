@@ -1,4 +1,10 @@
 @import "./tokens.css";
 @import "./base.css";
-@import "./portfolio.css";
-@import "./responsive.css";
+@import "./sections/layout.css";
+@import "./sections/shared.css";
+@import "./sections/navigation.css";
+@import "./sections/hero.css";
+@import "./sections/about.css";
+@import "./sections/work.css";
+@import "./sections/capabilities.css";
+@import "./sections/contact.css";

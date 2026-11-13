@@ -1,0 +1,210 @@
+/* HeroSection.astro */
+.hero {
+  position: relative;
+  display: flex;
+  min-height: calc(100svh - 28px);
+  padding: 98px 16px 0;
+  isolation: isolate;
+  color: var(--color-on-dark);
+  background:
+    radial-gradient(ellipse 60% 16% at 53% 32%, #e0e1dc35 0%, #a4a6a124 33%, transparent 72%),
+    radial-gradient(ellipse 90% 35% at 46% 4%, #b9bbb535 0%, #282a29 65%, transparent 100%),
+    linear-gradient(180deg, #393b39 0%, #121313 47%, #090a09 100%);
+}
+
+.hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .34;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.72'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  content: '';
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.hero-copy {
+  position: absolute;
+  top: 76px;
+  left: 50%;
+  width: min(250px, 34vw);
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.hero-copy p {
+  margin: 11px 0 0;
+  font-size: clamp(10px, .8vw, 12px);
+  line-height: 1.05;
+}
+
+.signal-mark {
+  position: relative;
+  width: 44px;
+  height: 20px;
+  margin: 0 auto 18px;
+}
+
+.signal-mark i {
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 9px;
+  border: 1px solid #e7e9e450;
+  border-radius: 50%;
+  transform: translateY(-50%) rotate(var(--angle));
+}
+
+.signal-mark i:nth-child(1) { --angle: 0deg; }
+.signal-mark i:nth-child(2) { --angle: 60deg; }
+.signal-mark i:nth-child(3) { --angle: -60deg; }
+
+.hero-wordmark {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: min(83%, 1200px);
+  margin: 0;
+  line-height: 0;
+  transform: translateX(-50%);
+}
+
+.hero-wordmark img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: .64;
+  filter: grayscale(1) invert(1) brightness(1.22) contrast(.82);
+}
+
+.hero-bottom {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(180px, 27%) minmax(0, 480px);
+  gap: clamp(2rem, 13vw, 13rem);
+  align-self: end;
+  width: 100%;
+  padding: 26px 0 31px;
+  border-top: 1px solid #ffffff33;
+}
+
+.hero-stat {
+  max-width: 195px;
+}
+
+.stat-meta {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 7px;
+  border-top: 1px solid #ffffff85;
+  font: 9px var(--font-mono);
+}
+
+.hero-stat strong {
+  display: block;
+  margin-top: 19px;
+  font-size: clamp(2rem, 3.1vw, 3.5rem);
+  letter-spacing: -.09em;
+}
+
+.hero-stat p {
+  max-width: 145px;
+  margin: 3px 0 0;
+  color: #d7d9d3bb;
+  font-size: 10px;
+  line-height: 1.24;
+}
+
+.hero-manifesto {
+  color: #f0f1ed;
+}
+
+.hero-manifesto > p {
+  max-width: 560px;
+  margin: 0 0 25px;
+  font-size: clamp(1.25rem, 2.2vw, 2.4rem);
+  font-weight: 600;
+  line-height: .95;
+  letter-spacing: -.075em;
+}
+
+.hero-manifesto > p + p {
+  color: #d4d7d1b5;
+}
+
+.signature {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 34px;
+  color: #cacdc7;
+}
+
+.signature span {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #e9ddd0;
+  color: #1c1b19;
+  font: 700 9px var(--font-mono);
+  place-items: center;
+}
+
+.signature small {
+  font: 9px/1.15 var(--font-mono);
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: max(750px, calc(100svh - 14px));
+    padding: 90px 12px 0;
+    background:
+      radial-gradient(ellipse 110% 14% at 50% 31%, #e0e1dc32 0%, #a4a6a11d 35%, transparent 72%),
+      linear-gradient(180deg, #393b39 0%, #121313 49%, #090a09 100%);
+  }
+
+  .hero-copy {
+    top: 76px;
+    width: 205px;
+  }
+
+  .hero-wordmark {
+    top: 24%;
+    width: min(88%, 540px);
+  }
+
+  .hero-bottom {
+    grid-template-columns: 108px 1fr;
+    gap: 1.5rem;
+    padding: 19px 0 22px;
+  }
+
+  .hero-stat strong {
+    margin-top: 15px;
+  }
+
+  .hero-stat p {
+    max-width: 100px;
+    font-size: 8px;
+  }
+
+  .stat-meta {
+    font-size: 7px;
+  }
+
+  .hero-manifesto > p {
+    margin-bottom: 18px;
+    font-size: clamp(1.22rem, 5vw, 1.7rem);
+    line-height: .96;
+  }
+
+  .hero-manifesto > p + p {
+    display: none;
+  }
+
+  .signature {
+    margin-top: 23px;
+  }
+}

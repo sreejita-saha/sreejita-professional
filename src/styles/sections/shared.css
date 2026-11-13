@@ -1,0 +1,19 @@
+/* Reusable editorial type treatments. */
+.label,
+.index,
+.number,
+.mono {
+  color: var(--color-muted);
+}
+
+.label,
+.index,
+.number {
+  font: 10px var(--font-mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.mono {
+  font: 10px/1.7 var(--font-mono);
+}
