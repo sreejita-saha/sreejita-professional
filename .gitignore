@@ -1,0 +1,9 @@
+# Installed dependencies
+node_modules/
+
+# Generated site output and Astro cache
+dist/
+.astro/
+
+# Local npm cache
+.npm-cache/

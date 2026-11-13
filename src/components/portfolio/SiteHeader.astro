@@ -1,11 +1,17 @@
 ---
-import { ArrowUpRight } from 'lucide-astro';
+import { ArrowUpRight, Volume2 } from 'lucide-astro';
 ---
 
 <header class="nav">
-  <a class="brand" href="#top">SJ<span>.</span></a>
-  <div class="availability"><i></i> Available for opportunities</div>
-  <a href="mailto:hello@sreejita.dev">Let's talk <ArrowUpRight size={13} /></a>
+  <a class="brand" href="#top" aria-label="Sreejita — home">SJ<span>°</span></a>
+  <nav aria-label="Primary navigation">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#capabilities">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="sound-control" type="button" aria-label="Sound is off"><Volume2 size={12} /></button>
+    <a class="project-link" href="mailto:hello@sreejita.dev">Start a project <ArrowUpRight size={12} /></a>
+  </div>
 </header>
-
-<aside class="progress" aria-hidden="true"><i></i><span>SCROLL TO EXPLORE</span></aside>

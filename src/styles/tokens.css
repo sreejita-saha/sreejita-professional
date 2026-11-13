@@ -13,6 +13,9 @@
   --color-contact-end: #8fc16f;
   --color-project-copy: #aaa79f;
   --color-tag-copy: #c5c2ba;
+  --color-on-dark: #eef0ed;
+  --color-ink-on-light: #111311;
+  --color-contact: #c8f36b;
   --font-sans: "Manrope", system-ui, sans-serif;
   --font-mono: "DM Mono", monospace;
   --content-width: 1240px;
@@ -36,5 +39,8 @@
     --color-contact-end: #7d7f7f;
     --color-project-copy: #4b5a5f;
     --color-tag-copy: #4b5a5f;
+    --color-on-dark: #faf4ea;
+    --color-ink-on-light: #242421;
+    --color-contact: #c2b7ab;
   }
 }
