@@ -1,5 +1,6 @@
 ---
 import Section from '../../../components/ui/Section.astro';
+import GitHubContributions from '../../../components/ui/GitHubContributions.astro';
 import ProjectStack from './ProjectStack.jsx';
 import { projects } from '../data';
 ---
@@ -7,5 +8,5 @@ import { projects } from '../data';
   <div class="work-head"><div class="index">05 / SELECTED WORK</div><p class="label">A selection of things I’ve built</p></div>
   <div class="work-intro"><h2>Projects<span>.</span></h2><p>A selection of projects across software, security, hardware and interactive development.</p></div>
   <div class="projects"><ProjectStack projects={projects} client:load /></div>
-  <a class="work-link" href="https://github.com/sreejita-saha">Explore my GitHub <span aria-hidden="true">↗</span></a>
+  <GitHubContributions username="sreejita-saha" />
 </Section>

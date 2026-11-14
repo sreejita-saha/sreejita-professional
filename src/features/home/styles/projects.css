@@ -18,7 +18,6 @@
 .tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.5rem; }
 .tags span { padding: .45rem .7rem; border: 1px solid var(--color-border-strong); border-radius: 999px; color: var(--color-tag-copy); font: .65rem/1.3 var(--font-mono); }
 .project-card__mark { position: absolute; top: 2.5rem; right: 0; color: var(--color-accent); font-size: 2rem; }
-.work-link { display: inline-flex; gap: 1.5rem; margin-top: 4rem; padding-bottom: .6rem; border-bottom: 1px solid currentColor; text-decoration: none; font-size: .9rem; }
 @media (max-width: 50rem) { .work-intro { display: block; } .work-intro p { margin-top: 2rem; } .project-card__body { grid-template-columns: 1fr; } }
 /* Tall content and reduced-motion users get a readable, unstacked list. */
 @media (max-width: 50rem), (max-height: 40rem), (prefers-reduced-motion: reduce) {

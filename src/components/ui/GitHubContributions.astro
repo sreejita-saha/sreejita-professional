@@ -1,0 +1,124 @@
+---
+interface Props {
+  username: string;
+}
+
+const { username } = Astro.props;
+const profileUrl = `https://github.com/${encodeURIComponent(username)}`;
+---
+
+<section class="contributions" aria-labelledby="contributions-title">
+  <div class="contributions__heading">
+    <div><p class="label">GITHUB / ACTIVITY </p><h3 id="contributions-title">sreejita-saha<span>.</span></h3></div>
+    <a class="contributions__link" href={profileUrl}>View my GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="contributions__panel" data-contributions data-username={username}>
+    <div class="contributions__meta"><span>PAST YEAR</span><span data-contributions-total aria-live="polite">Loading activity…</span></div>
+    <div class="contributions__graph" role="region" aria-label="GitHub contribution calendar; scroll horizontally to view all months" tabindex="0">
+      <div data-contributions-calendar></div>
+    </div>
+    <div class="contributions__legend" aria-hidden="true"><span>LESS</span><i></i><i></i><i></i><i></i><i></i><span>MORE</span></div>
+    <noscript><p class="contributions__message">Visit the GitHub profile to view the contribution calendar.</p></noscript>
+  </div>
+</section>
+
+<script>
+  interface Contribution { date: string; count: number; level: number }
+
+  document.querySelectorAll<HTMLElement>('[data-contributions]').forEach(async (panel) => {
+    const username = panel.dataset.username;
+    const calendar = panel.querySelector<HTMLElement>('[data-contributions-calendar]');
+    const total = panel.querySelector<HTMLElement>('[data-contributions-total]');
+    const scroller = panel.querySelector<HTMLElement>('.contributions__graph');
+    if (!username || !calendar || !total || !scroller) return;
+
+    try {
+      const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${encodeURIComponent(username)}?y=last`);
+      if (!response.ok) throw new Error('Contribution data unavailable');
+      const data = await response.json();
+      const days: Contribution[] = data.contributions;
+      if (!Array.isArray(days) || !days.length) throw new Error('Contribution data unavailable');
+
+      const firstDay = new Date(`${days[0].date}T00:00:00Z`).getUTCDay();
+      const weeks = Math.ceil((firstDay + days.length) / 7);
+      const grid = document.createElement('div');
+      grid.className = 'contributions__calendar';
+      grid.style.setProperty('--weeks', String(weeks));
+      grid.setAttribute('role', 'img');
+      const sum = days.reduce((count, day) => count + day.count, 0);
+      grid.setAttribute('aria-label', `${sum} GitHub contributions from ${days[0].date} to ${days[days.length - 1].date}. Visit the GitHub profile for details.`);
+      total.textContent = `${sum.toLocaleString()} CONTRIBUTIONS`;
+
+      days.forEach((day, index) => {
+        const date = new Date(`${day.date}T00:00:00Z`);
+        const slot = firstDay + index;
+        const column = Math.floor(slot / 7) + 1;
+        if (index === 0 || date.getUTCDate() === 1) {
+          const month = document.createElement('span');
+          month.className = 'contributions__month';
+          month.style.gridColumn = String(column);
+          month.style.gridRow = '1';
+          month.textContent = date.toLocaleDateString('en', { month: 'short', timeZone: 'UTC' });
+          grid.append(month);
+        }
+        const cell = document.createElement('span');
+        cell.className = 'contributions__cell';
+        cell.dataset.level = String(Math.max(0, Math.min(4, day.level)));
+        cell.style.gridColumn = String(column);
+        cell.style.gridRow = String(slot % 7 + 2);
+        cell.title = `${day.count} contribution${day.count === 1 ? '' : 's'} on ${day.date}`;
+        cell.setAttribute('aria-hidden', 'true');
+        grid.append(cell);
+      });
+      calendar.replaceChildren(grid);
+      scroller.scrollLeft = scroller.scrollWidth;
+    } catch {
+      total.textContent = 'Activity unavailable — view it on GitHub';
+      scroller.hidden = true;
+      panel.querySelector<HTMLElement>('.contributions__legend')?.setAttribute('hidden', '');
+    }
+  });
+</script>
+
+<style>
+  .contributions { max-width: 72rem; margin: clamp(6rem, 12vw, 11rem) auto 0; padding-top: 2rem; border-top: 1px solid var(--color-border); }
+  .contributions__heading { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.5rem; }
+  .contributions__heading .label { margin: 0 0 1.5rem; }
+  h3 { margin: 0; font-size: clamp(2rem, 4vw, 4rem); font-weight: 500; letter-spacing: -.055em; line-height: 1; }
+  h3 span { color: var(--color-accent); }
+  .contributions__link { display: inline-flex; gap: 1.5rem; padding-bottom: .6rem; border-bottom: 1px solid currentColor; text-decoration: none; font-size: .9rem; }
+  .contributions__panel {
+    --color-text: #e8e9e5;
+    --color-muted: #c3c5c0;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(1.25rem, 3vw, 2.5rem);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 1.25rem;
+    background: #171818;
+  }
+  .contributions__panel::before {
+    position: absolute;
+    z-index: -1;
+    inset: -.75rem;
+    background: linear-gradient(rgb(10 11 10 / 78%), rgb(10 11 10 / 70%)), url('/contributions-graph-bg.png') center 58% / cover no-repeat;
+    filter: blur(5px);
+    content: '';
+    pointer-events: none;
+  }
+  .contributions__meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; margin-bottom: 2rem; color: var(--color-muted); font: .65rem/1.5 var(--font-mono); letter-spacing: .06em; }
+  .contributions__graph { overflow-x: auto; padding-bottom: .5rem; }
+  .contributions__graph :global(.contributions__calendar) { display: grid; grid-template-columns: repeat(var(--weeks), .7rem); grid-template-rows: 1.6rem repeat(7, .7rem); gap: .22rem; width: max-content; }
+  .contributions__graph :global(.contributions__month) { color: var(--color-muted); font: .65rem/1 var(--font-mono); white-space: nowrap; }
+  .contributions__graph :global(.contributions__cell), .contributions__legend i { width: .7rem; height: .7rem; border-radius: 2px; background: color-mix(in srgb, var(--color-text) 9%, transparent); }
+  .contributions__graph :global(.contributions__cell[data-level='1']), .contributions__legend i:nth-of-type(2) { background: color-mix(in srgb, var(--color-text) 28%, transparent); }
+  .contributions__graph :global(.contributions__cell[data-level='2']), .contributions__legend i:nth-of-type(3) { background: color-mix(in srgb, var(--color-text) 46%, transparent); }
+  .contributions__graph :global(.contributions__cell[data-level='3']), .contributions__legend i:nth-of-type(4) { background: color-mix(in srgb, var(--color-text) 68%, transparent); }
+  .contributions__graph :global(.contributions__cell[data-level='4']), .contributions__legend i:nth-of-type(5) { background: color-mix(in srgb, var(--color-text) 90%, transparent); }
+  .contributions__legend { display: flex; align-items: center; justify-content: end; gap: .25rem; margin-top: 1rem; color: var(--color-muted); font: .6rem/1 var(--font-mono); letter-spacing: .05em; }
+  .contributions__legend span:first-child { margin-right: .4rem; }
+  .contributions__legend span:last-child { margin-left: .4rem; }
+  .contributions__graph[hidden], .contributions__legend[hidden] { display: none; }
+  .contributions__message { color: var(--color-muted); font-size: .85rem; }
+</style>
