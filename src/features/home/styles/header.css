@@ -46,7 +46,8 @@
   z-index: 2;
   width: 0;
   line-height: 0;
-  will-change: transform, width;
+  transform-origin: top left;
+  will-change: transform;
 }
 .floating-wordmark img {
   display: block;
@@ -68,4 +69,5 @@
   .site-sidebar .line-sidebar__marker, .site-sidebar .line-sidebar__item::after, .site-sidebar .line-sidebar__index { display: none; }
   .site-sidebar .line-sidebar__label { font-size: 9px; transform: none; }
 }
+
 
