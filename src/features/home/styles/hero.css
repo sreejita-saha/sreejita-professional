@@ -6,7 +6,7 @@
   grid-template-rows: auto minmax(16rem, 1fr) auto;
   gap: clamp(2.5rem, 5vw, 5rem);
   min-height: 100svh;
-  padding: clamp(7rem, 12vh, 9rem) var(--hero-gutter) clamp(2rem, 4vw, 3rem);
+  padding: clamp(6rem, 10vh, 8rem) var(--hero-gutter) clamp(2rem, 4vw, 3rem);
   container-type: inline-size;
   isolation: isolate;
   color: var(--color-on-dark);
@@ -70,7 +70,7 @@
 .signal-mark i:nth-child(3) { --angle: -60deg; }
 
 .hero-wordmark {
-  width: min(100%, 1700px);
+  width: min(94%, 1600px);
   margin: 0;
   justify-self: center;
   line-height: 0;
@@ -168,7 +168,7 @@
     grid-template-rows: auto auto auto;
     gap: clamp(2.5rem, 10vw, 4rem);
     min-height: auto;
-    padding: 6rem var(--hero-gutter) 2rem;
+    padding: 5.5rem var(--hero-gutter) 2rem;
   }
 
   .hero::after {
@@ -212,3 +212,4 @@
     margin-top: 23px;
   }
 }
+

@@ -4,8 +4,10 @@ import LineSidebar from '../ui/LineSidebar.jsx';
 ---
 
 <header class="nav">
+  <a class="floating-wordmark" href="#top" aria-label="Sreejita — back to top"><img src="/sreejita.svg" alt="" /></a>
   <a class="brand" href="/" aria-label="Sreejita â€” home">
     <img src="/favicon.svg" alt="" width="28" height="28" />
   </a>
   <LineSidebar client:load items={['Overview', 'About', 'Work', 'Services', 'Contact']} hrefs={['#top', '#about', '#work', '#capabilities', '#contact']} className="site-sidebar" accentColor="#fff" textColor="#ffffff9c" markerColor="#ffffff55" markerLength={34} markerGap={10} maxShift={18} fontSize={0.625} defaultActive={0} />
 </header>
+
