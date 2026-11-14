@@ -9,8 +9,8 @@
 @import "../features/home/styles/header.css";
 @import "../features/home/styles/hero.css";
 @import "../features/home/styles/introduction.css";
-@import "../features/home/styles/about.css";
-@import "../features/home/styles/work.css";
-@import "../features/home/styles/capabilities.css";
+@import "../features/home/styles/profile-sections.css";
+@import "../features/home/styles/projects.css";
+@import "../features/home/styles/skills.css";
 @import "../features/home/styles/contact.css";
 
