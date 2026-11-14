@@ -58,16 +58,7 @@
 }
 .floating-wordmark:focus-visible { outline: 1px solid #ffffffb3; outline-offset: 2px; }
 
-.site-sidebar { position: fixed; top: 50%; left: clamp(1rem, 0.2vw, 2rem); z-index: 20; transform: translateY(-50%); pointer-events: auto; }
-.site-sidebar a { color: inherit; }
-.site-sidebar a:focus-visible { outline: 1px solid white; outline-offset: 5px; }
-
 @media (max-width: 56rem) {
   .nav { grid-template-columns: 1fr auto; min-height: 48px; }
-  .site-sidebar { top: auto; right: 0; bottom: .75rem; left: 0; display: flex; justify-content: center; padding: 0; transform: none; }
-  .site-sidebar .line-sidebar__list { flex-direction: row; gap: clamp(.7rem, 4vw, 1.5rem); padding: .65rem .9rem; border: 1px solid #ffffff25; background: #111111d9; backdrop-filter: blur(10px); }
-  .site-sidebar .line-sidebar__marker, .site-sidebar .line-sidebar__item::after, .site-sidebar .line-sidebar__index { display: none; }
-  .site-sidebar .line-sidebar__label { font-size: 9px; transform: none; }
 }
-
 

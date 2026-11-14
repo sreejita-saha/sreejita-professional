@@ -158,7 +158,7 @@
   font: 9px var(--font-mono);
 }
 
-@container (width < 54rem) {
+@media (max-width: 54rem) {
   .project,
   .project.reverse {
     grid-template-columns: 1fr;

@@ -29,6 +29,7 @@
   .hero {
     padding-left: max(12rem, var(--hero-gutter));
   }
+
 }
 
 .hero::before {
@@ -84,8 +85,16 @@
   width: 100%;
 }
 
+@media (min-width: 56.01rem) {
+  .hero-heading {
+    justify-self: start;
+    width: calc(100vw - 2 * var(--hero-gutter));
+    left: calc(var(--hero-gutter) - max(12rem, var(--hero-gutter)));
+  }
+}
+
 .hero-wordmark {
-  width: min(94%, 1600px);
+  width: min(90%, 1500px);
   margin: 2rem 0 0;
   justify-self: center;
   line-height: 0;
@@ -180,7 +189,7 @@
   font: 9px/1.15 var(--font-mono);
 }
 
-@container (width < 45rem) {
+@media (max-width: 56rem) {
   .hero {
     grid-template-rows: auto auto;
     gap: clamp(2.5rem, 10vw, 4rem);
@@ -200,7 +209,7 @@
   position: relative;
   display: grid;
   justify-items: center;
-  align-content: start;
+  align-content: center;
   min-height: 0;
   width: 100%;
 }
@@ -208,11 +217,14 @@
 .hero-wordmark {
     width: 100%;
     margin: 0;
+    left: 0;
   }
 
   .hero-bottom {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
+    margin-top: 1rem;
+    scroll-margin-top: 5rem;
     padding: 19px 0 22px;
   }
 
@@ -221,12 +233,12 @@
   }
 
   .hero-stat p {
-    max-width: 100px;
-    font-size: 8px;
+    max-width: 145px;
+    font-size: 10px;
   }
 
   .stat-meta {
-    font-size: 7px;
+    font-size: 9px;
   }
 
   .hero-manifesto > p {

@@ -31,7 +31,7 @@
   line-height: 1.65;
 }
 
-@container (width < 50rem) {
+@media (max-width: 50rem) {
   .statement {
     display: block;
   }
@@ -44,4 +44,8 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+}
+
+@media (max-width: 600px) {
+  .statement { margin-top: 0; }
 }

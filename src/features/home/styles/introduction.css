@@ -1,12 +1,13 @@
 /* A compact editorial label above the wordmark. */
 .hero-introduction {
   position: absolute;
-  top: 9%;
-  left: 12%;
+  top: 12%;
+  left: 32%;
+  transform: translateX(-50%);
   margin: 0;
   color: #4e4d4d;
   background-color: #e3e3e3;
-  padding: 0rem 1rem;
+  padding: 0.15rem 1rem;
   border-radius: 1rem;
   opacity: .58;
   font: 500 clamp(.85rem, 1.45vw, 1.7rem)/1.5 var(--font-mono);
@@ -33,4 +34,14 @@
   .hero-introduction-writing { animation: none; }
 }
 
-
+@media (max-width: 56rem) {
+  .hero-introduction {
+    position: static;
+    transform: none;
+    justify-self: center;
+    margin-bottom: 1.25rem;
+    padding-inline: .7rem;
+    font-size: clamp(.55rem, 2.5vw, .75rem);
+    letter-spacing: .1em;
+  }
+}

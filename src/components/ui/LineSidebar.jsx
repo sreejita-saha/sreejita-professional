@@ -1,5 +1,7 @@
 'use client';
 
+// Based on React Bits Line Sidebar; links and scroll tracking are adapted for this site.
+// Source: https://github.com/DavidHDev/react-bits/tree/main/src/content/Components/LineSidebar
 import { useRef, useState, useCallback, useEffect } from 'react';
 import './LineSidebar.css';
 
@@ -11,37 +13,31 @@ const FALLOFF_CURVES = {
 
 const DEFAULT_ITEMS = [
   'Overview',
-  'Components',
-  'Animations',
-  'Backgrounds',
-  'Showcase',
-  'Playground',
-  'Templates',
-  'Changelog',
-  'Community',
-  'Resources',
-  'Documentation',
-  'Support'
+  'About',
+  'Work',
+  'Services',
+  'Contact'
 ];
+const DEFAULT_HREFS = ['#top', '#about', '#work', '#capabilities', '#contact'];
 const LineSidebar = ({
   items = DEFAULT_ITEMS,
-  hrefs = [],
-  accentColor = '#A855F7',
-  textColor = '#c4c4c4',
-  markerColor = '#6c6c6c',
+  hrefs = DEFAULT_HREFS,
+  accentColor = '#fff',
+  textColor = '#ffffff9c',
+  markerColor = '#ffffff55',
   showIndex = true,
   showMarker = true,
   proximityRadius = 100,
-  maxShift = 20,
+  maxShift = 18,
   falloff = 'smooth',
-  markerLength = 30,
-  markerGap = -10,
+  markerLength = 42,
+  markerGap = 12,
   tickScale = 0.3,
   scaleTick = true,
-  itemGap = 30,
-  fontSize = 1,
+  itemGap = 35,
+  fontSize = 1.3,
   smoothing = 100,
-  defaultActive = null,
+  defaultActive = 0,
   onItemClick,
   className = ''
 }) => {

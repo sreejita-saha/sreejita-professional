@@ -40,7 +40,7 @@
   text-transform: uppercase;
 }
 
-@container (width < 50rem) {
+@media (max-width: 50rem) {
   .contact footer {
     flex-wrap: wrap;
     gap: 1rem;
