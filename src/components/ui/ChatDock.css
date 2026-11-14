@@ -47,5 +47,9 @@
     border-radius: 999px;
   }
   .chat-dock input { font-size: .9rem; }
-  .chat-dock button { width: 2.25rem; height: 2.25rem; }
+  .chat-dock button { width: 44px; height: 44px; }
+}
+
+@media (max-height: 40rem) {
+  .chat-dock { position: relative; inset: auto; margin: 1rem auto; transform: none; }
 }

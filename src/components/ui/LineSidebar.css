@@ -82,8 +82,22 @@
 }
 
 @media (max-width: 56rem) {
-  .line-sidebar { top: auto; right: 0; bottom: calc(max(.75rem, env(safe-area-inset-bottom)) + 3.75rem); left: 0; justify-content: center; padding: 0 1rem; transform: none; }
-  .line-sidebar__list { flex-direction: row; justify-content: center; gap: clamp(.65rem, 3vw, 1.4rem); max-width: 100%; padding: .65rem 1rem; border: 1px solid #ffffff1f; border-radius: 999px; background: #181818e8; backdrop-filter: blur(10px); }
+  .line-sidebar { top: auto; right: 0; bottom: calc(max(.75rem, env(safe-area-inset-bottom)) + 4.5rem); left: 0; justify-content: center; padding: 0 1rem; transform: none; }
+  .line-sidebar__list { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: .1rem clamp(.15rem, 1vw, .65rem); max-width: 100%; padding: .25rem .45rem; border: 1px solid #ffffff1f; border-radius: 1.5rem; background: #181818e8; backdrop-filter: blur(10px); }
+  .line-sidebar__item::before { display: none; }
+  .line-sidebar__item a { display: flex; align-items: center; justify-content: center; min-height: 44px; padding-inline: .1rem; }
   .line-sidebar__marker, .line-sidebar--markers .line-sidebar__item::after, .line-sidebar__index { display: none; }
-  .line-sidebar__label { font-size: clamp(.55rem, 2.5vw, .7rem); transform: none; }
+  .line-sidebar__label { font-size: clamp(.58rem, 2.5vw, .7rem); transform: none; }
+}
+
+/* On short viewports fixed controls would occupy most of the reading area. */
+@media (max-height: 40rem) {
+  .site .nav { position: relative; }
+  .site .floating-wordmark { position: absolute; }
+  .line-sidebar { position: static; padding: 0; transform: none; }
+  .line-sidebar__list { display: flex; flex-direction: row; flex-wrap: wrap; gap: .5rem 1rem; }
+  .line-sidebar__marker, .line-sidebar--markers .line-sidebar__item::after, .line-sidebar__index { display: none; }
+  .line-sidebar__label { transform: none; font-size: .75rem; }
+  .line-sidebar__item::before { display: none; }
+  .line-sidebar__item a { display: inline-flex; padding-block: .5rem; }
 }

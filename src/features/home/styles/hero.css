@@ -16,7 +16,7 @@
 .hero::after {
   position: absolute;
   z-index: -2;
-  inset: -24px;
+  inset: 0;
   background:
     linear-gradient(180deg, rgb(9 10 9 / 28%) 0%, rgb(9 10 9 / 18%) 37%, rgb(5 6 5 / 92%) 100%),
     url('/hero-background.png') center / cover no-repeat;
@@ -88,7 +88,7 @@
 @media (min-width: 56.01rem) {
   .hero-heading {
     justify-self: start;
-    width: calc(100vw - 2 * var(--hero-gutter));
+    width: calc(100% + max(12rem, var(--hero-gutter)) - var(--hero-gutter));
     left: calc(var(--hero-gutter) - max(12rem, var(--hero-gutter)));
   }
 }

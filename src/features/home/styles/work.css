@@ -28,7 +28,7 @@
 .project,
 .project.reverse {
   display: grid;
-  grid-template-columns: minmax(0, 1.22fr) minmax(18rem, .78fr);
+  grid-template-columns: minmax(0, 1.22fr) minmax(0, .78fr);
   gap: clamp(2rem, 7vw, 7rem);
   align-items: center;
   padding: 5rem 0;
@@ -36,7 +36,7 @@
 }
 
 .project.reverse {
-  grid-template-columns: minmax(250px, .78fr) minmax(0, 1.22fr);
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
 }
 
 .project.reverse .visual {

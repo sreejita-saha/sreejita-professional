@@ -24,6 +24,9 @@ body {
 a {
   color: inherit;
 }
+img, svg { max-width: 100%; }
+p, h1, h2, h3, a { overflow-wrap: anywhere; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .loader {
   display: none;
 }
