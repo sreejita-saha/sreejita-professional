@@ -10,9 +10,11 @@
 .page-section {
   width: 100%;
   margin: 0;
-  padding-block: clamp(4.5rem, 10vw, 9rem);
+  padding-block: clamp(4rem, 7vw, 6.5rem);
   padding-inline: max(var(--page-gutter), calc((100% - var(--content-width)) / 2));
 }
+
+.page-section .label, .page-section .index { font-size: .72rem; line-height: 1.5; }
 
 /* Reserve room for the fixed navigation, including its animated label shift. */
 @media (min-width: 56.01rem) and (min-height: 40.01rem) {

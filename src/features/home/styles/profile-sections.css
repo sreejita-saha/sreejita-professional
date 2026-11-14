@@ -2,39 +2,43 @@
 .section-topline { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 1rem; }
 .section-topline .label { margin: 0; }
 .statement { border-top: 1px solid var(--color-border); }
-.about-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(15rem, .7fr); gap: clamp(3rem, 6vw, 6rem); align-items: end; margin-top: clamp(5rem, 10vw, 9rem); }
+.about-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; margin-top: clamp(3rem, 6vw, 5rem); }
 .statement h2, .experience h2, .education h2 { margin: 0; font-weight: 500; line-height: .96; letter-spacing: -.065em; }
 .statement h2 { font-size: clamp(3rem, 6vw, 6.5rem); }
 .statement h2 span, .experience h2 span, .education h2 span { color: var(--color-accent); }
-.profile-intro { max-width: 28rem; }
-.profile-intro p, .experience-copy p, .education-detail > p { line-height: 1.75; color: var(--color-project-copy); }
-.profile-intro p:first-child { color: var(--color-text); }
+.profile-intro { max-width: 42rem; }
+.profile-intro p, .experience-copy p, .education-detail > p { font-size: clamp(1.05rem, 1.2vw, 1.2rem); line-height: 1.7; color: var(--color-project-copy); }
+.profile-intro p:first-child { margin-top: 0; color: var(--color-text); font-size: clamp(1.2rem, 1.7vw, 1.55rem); line-height: 1.5; }
+.about-focus { display: flex; flex-wrap: wrap; align-items: baseline; gap: .75rem 2.5rem; margin-top: clamp(3rem, 5vw, 5rem); padding: 1.5rem 0; border-block: 1px solid var(--color-border); }
+.about-focus p { margin: 0; font-size: clamp(1rem, 1.3vw, 1.2rem); line-height: 1.6; }
+.about-focus p span { color: var(--color-muted); padding-inline: .35rem; }
 
 .experience { background: var(--color-surface); }
-.experience-heading { display: flex; align-items: end; justify-content: space-between; gap: 3rem; margin: clamp(6rem, 12vw, 11rem) 0 clamp(4rem, 8vw, 7rem); }
+.experience-heading { display: flex; align-items: end; justify-content: space-between; gap: 3rem; margin: clamp(3rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem); }
 .experience h2 { font-size: clamp(2.5rem, 7vw, 7rem); }
-.experience-heading > p { max-width: 20rem; margin: 0; color: var(--color-project-copy); line-height: 1.7; }
+.experience-heading > p { max-width: 25rem; margin: 0; color: var(--color-project-copy); font-size: 1.1rem; line-height: 1.6; }
 .experience-list { border-top: 1px solid var(--color-border-strong); }
-.experience-entry { padding: clamp(2rem, 4vw, 4rem) 0 clamp(4rem, 8vw, 7rem); border-bottom: 1px solid var(--color-border-strong); }
-.experience-entry + .experience-entry { padding-top: clamp(3rem, 6vw, 5rem); }
-.experience-entry__meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--color-muted); font: .65rem/1.5 var(--font-mono); letter-spacing: .06em; }
-.experience-entry__body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .7fr); gap: clamp(3rem, 7vw, 7rem); margin-top: clamp(3rem, 6vw, 5.5rem); }
+.experience-entry { padding: clamp(2rem, 3vw, 3rem) 0 clamp(3rem, 5vw, 4.5rem); border-bottom: 1px solid var(--color-border-strong); }
+.experience-entry + .experience-entry { padding-top: clamp(2rem, 3vw, 3rem); }
+.experience-entry__meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--color-muted); font: .72rem/1.5 var(--font-mono); letter-spacing: .06em; }
+.experience-entry__body { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); margin-top: clamp(2rem, 4vw, 3.5rem); }
 .experience-entry h3 { margin: 0; font-size: clamp(3rem, 6vw, 6rem); line-height: .96; font-weight: 500; letter-spacing: -.07em; }
 .experience-dot { color: var(--color-accent); }
-.experience-role { margin: 1.5rem 0 0; color: var(--color-muted); font: .75rem/1.6 var(--font-mono); }
-.experience-copy { max-width: 32rem; }
-.experience-copy p:first-child { margin-top: 0; color: var(--color-text); font-size: 1.05rem; }
+.experience-role { margin: 1.5rem 0 0; color: var(--color-muted); font: .82rem/1.6 var(--font-mono); }
+.experience-copy { max-width: 42rem; }
+.experience-copy p:first-child { margin-top: 0; color: var(--color-text); font-size: clamp(1.15rem, 1.4vw, 1.35rem); line-height: 1.6; }
 .experience-copy p + p { margin-top: 1.2rem; }
 .experience-keywords { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
-.experience-keywords span { padding: .5rem .8rem; border: 1px solid var(--color-border-strong); border-radius: 999px; color: var(--color-muted); font: .65rem/1.3 var(--font-mono); }
+.experience-keywords span, .education-subjects span { padding: .55rem .85rem; border: 1px solid var(--color-border-strong); border-radius: 999px; color: var(--color-text); font: .72rem/1.3 var(--font-mono); }
 
 .education { border-bottom: 1px solid var(--color-border); }
-.education-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .7fr); gap: clamp(3rem, 7vw, 7rem); margin-top: clamp(6rem, 12vw, 11rem); }
+.education-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); margin-top: clamp(3rem, 6vw, 5rem); }
 .education-kicker, .education-meta, .education-award small { color: var(--color-muted); font: .65rem/1.6 var(--font-mono); letter-spacing: .06em; }
 .education h2 { margin-top: 2rem; font-size: clamp(3.5rem, 7vw, 7rem); }
-.education-detail { max-width: 32rem; align-self: end; }
+.education-detail { max-width: 42rem; align-self: start; }
 .education-detail .education-degree { margin: 0 0 .5rem; color: var(--color-text); font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.3; letter-spacing: -.03em; }
-.education-detail .education-meta { margin: 0 0 2rem; }
+.education-detail .education-meta { margin: 0 0 2rem; font: .72rem/1.6 var(--font-mono); }
+.education-subjects { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.75rem; }
 .education-award { display: flex; gap: 1rem; align-items: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border-strong); }
 .education-award > span { color: var(--color-accent); font-size: 1.75rem; }
 .education-award p { margin: .25rem 0 0; font-size: .9rem; }

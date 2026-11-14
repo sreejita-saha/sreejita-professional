@@ -12,14 +12,14 @@
 }
 
 .contact-title {
-  margin: 5rem 0 4rem;
+  margin: clamp(3rem, 6vw, 5rem) 0 2.5rem;
   font-size: clamp(2.1rem, 10vw, 11rem);
   font-weight: 600;
   line-height: .8;
   letter-spacing: -.12em;
 }
 
-.contact-intro { margin: 0 0 2rem; font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.6; }
+.contact-intro { margin: 0 0 2rem; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.6; }
 .contact-links { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
 .contact-links a { display: inline-flex; align-items: center; gap: .35rem; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: .3rem; }
 
@@ -42,7 +42,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 10rem;
+  margin-top: 6rem;
   font: 10px var(--font-mono);
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -55,7 +55,7 @@
   .contact footer {
     flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 8rem;
+    margin-top: 5rem;
   }
 
   .contact { padding-bottom: max(clamp(4.5rem, 10vw, 9rem), 11rem); }

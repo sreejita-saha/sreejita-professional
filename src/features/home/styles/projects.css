@@ -2,10 +2,10 @@
 .work { background: var(--color-surface); }
 .work-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .work-head .label { margin: 0; }
-.work-intro { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin: clamp(4rem, 9vw, 8rem) 0 4rem; }
+.work-intro { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin: clamp(3rem, 6vw, 5rem) 0 3rem; }
 .work-intro h2 { margin: 0; font-size: clamp(3.5rem, 8vw, 8rem); font-weight: 500; letter-spacing: -.055em; line-height: .9; }
 .work-intro h2 span { color: var(--color-accent); }
-.work-intro p { max-width: 20rem; margin: 0; color: var(--color-project-copy); line-height: 1.65; }
+.work-intro p { max-width: 25rem; margin: 0; color: var(--color-project-copy); font-size: 1.1rem; line-height: 1.65; }
 .projects { max-width: 72rem; margin-inline: auto; }
 .projects .scroll-stack__inner { padding-inline: 0; }
 .projects .scroll-stack-card { height: auto; min-height: 25rem; padding: clamp(1.5rem, 4vw, 3.5rem); border-radius: 1.25rem; background: var(--color-surface-solid); color: var(--color-text); box-shadow: 0 0 0 1px var(--color-border-strong), 0 1rem 3rem #0003; }
@@ -14,9 +14,9 @@
 .project-card__body { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; margin-block: auto; padding-block: 3rem 1rem; }
 .project-card h3 { margin: 0 0 1.25rem; font-size: clamp(2.6rem, 5vw, 5.5rem); line-height: .98; letter-spacing: -.055em; font-weight: 500; }
 .project-card__summary { max-width: 26rem; margin: 0; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.4; }
-.project-card__detail p { margin: 0; color: var(--color-project-copy); line-height: 1.7; }
+.project-card__detail p { margin: 0; color: var(--color-project-copy); font-size: clamp(1.05rem, 1.2vw, 1.2rem); line-height: 1.65; }
 .tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.5rem; }
-.tags span { padding: .45rem .7rem; border: 1px solid var(--color-border-strong); border-radius: 999px; color: var(--color-tag-copy); font: .65rem/1.3 var(--font-mono); }
+.tags span { padding: .45rem .7rem; border: 1px solid var(--color-border-strong); border-radius: 999px; color: var(--color-tag-copy); font: .72rem/1.3 var(--font-mono); }
 .project-card__mark { position: absolute; top: 2.5rem; right: 0; color: var(--color-accent); font-size: 2rem; }
 @media (max-width: 50rem) { .work-intro { display: block; } .work-intro p { margin-top: 2rem; } .project-card__body { grid-template-columns: 1fr; } }
 /* Tall content and reduced-motion users get a readable, unstacked list. */

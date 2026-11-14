@@ -9,7 +9,7 @@ import { capabilities } from '../data';
     <h2>Skills &amp; tools<span>.</span></h2>
     <p class="toolkit-intro">A selection of the languages, frameworks and platforms I’ve used across university, internships and personal projects.</p>
     <div class="cap-list">
-      {capabilities.map((capability) => <div><small>{capability.number}</small><b>{capability.title}</b><p>{capability.description}</p></div>)}
+      {capabilities.map((capability) => <div><small>{capability.number}</small><b>{capability.title}</b><ul>{capability.description.split(' · ').map((skill) => <li>{skill}</li>)}</ul></div>)}
     </div>
   </div>
 </Section>
