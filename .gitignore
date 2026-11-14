@@ -7,3 +7,6 @@ dist/
 
 # Local npm cache
 .npm-cache/
+
+# Previous dependency installation backup
+node_modules.broken/

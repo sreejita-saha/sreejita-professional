@@ -1,18 +1,11 @@
 ---
 // Global site navigation.
+import LineSidebar from '../ui/LineSidebar.jsx';
 ---
 
 <header class="nav">
   <a class="brand" href="/" aria-label="Sreejita — home">
     <img src="/favicon.svg" alt="" width="28" height="28" />
   </a>
-  <nav class="line-sidebar" aria-label="Primary navigation" data-line-sidebar>
-    <ul class="line-sidebar__list">
-      <li class="line-sidebar__item" data-sidebar-item><a href="#top"><span class="line-sidebar__marker" aria-hidden="true"></span><span class="line-sidebar__label"><span class="line-sidebar__index">01</span><span>Overview</span></span></a></li>
-      <li class="line-sidebar__item" data-sidebar-item><a href="#about"><span class="line-sidebar__marker" aria-hidden="true"></span><span class="line-sidebar__label"><span class="line-sidebar__index">02</span><span>About</span></span></a></li>
-      <li class="line-sidebar__item" data-sidebar-item><a href="#work"><span class="line-sidebar__marker" aria-hidden="true"></span><span class="line-sidebar__label"><span class="line-sidebar__index">03</span><span>Work</span></span></a></li>
-      <li class="line-sidebar__item" data-sidebar-item><a href="#capabilities"><span class="line-sidebar__marker" aria-hidden="true"></span><span class="line-sidebar__label"><span class="line-sidebar__index">04</span><span>Services</span></span></a></li>
-      <li class="line-sidebar__item" data-sidebar-item><a href="#contact"><span class="line-sidebar__marker" aria-hidden="true"></span><span class="line-sidebar__label"><span class="line-sidebar__index">05</span><span>Contact</span></span></a></li>
-    </ul>
-  </nav>
+  <LineSidebar client:load items={['Overview', 'About', 'Work', 'Services', 'Contact']} hrefs={['#top', '#about', '#work', '#capabilities', '#contact']} className="site-sidebar" accentColor="#fff" textColor="#ffffff9c" markerColor="#ffffff55" markerLength={34} markerGap={10} maxShift={18} fontSize={0.625} defaultActive={0} />
 </header>
