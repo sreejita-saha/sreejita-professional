@@ -1,6 +1,7 @@
----
+﻿---
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/layout/SiteHeader.astro';
+import ChatDock from '../components/ui/ChatDock.astro';
 import About from '../features/home/sections/About.astro';
 import Capabilities from '../features/home/sections/Capabilities.astro';
 import Contact from '../features/home/sections/Contact.astro';
@@ -29,5 +30,8 @@ import '../styles/global.css';
     </main>
   </div>
 
+  <ChatDock />
+
   <script src="../features/home/scripts/index.ts"></script>
 </Layout>
+

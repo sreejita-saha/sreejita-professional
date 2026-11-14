@@ -1,0 +1,58 @@
+﻿<div class="chat-dock" role="search" aria-label="Portfolio chat">
+  <div class="chat-dock__input-wrap">
+    <input id="portfolio-question" aria-label="Ask about my work" type="text" placeholder="Ask about my work..." autocomplete="off" />
+    <button type="button" aria-label="Send message (coming soon)" disabled>
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  .chat-dock {
+    position: fixed;
+    z-index: 100;
+    bottom: max(1.5rem, env(safe-area-inset-bottom));
+    left: 50%;
+    width: min(42rem, calc(100% - 2rem));
+    padding: 0.55rem 0.65rem 0.55rem 1rem;
+    transform: translateX(-50%);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 1.2rem;
+    background: rgba(32, 32, 32, 0.72);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.28), 0 0 60px 15px rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+  }
+  .chat-dock__input-wrap { display: flex; align-items: center; gap: 0.75rem; }
+  .chat-dock input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.35rem 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #f3f3f1;
+    font: 400 0.9rem/1.4 'Manrope', sans-serif;
+  }
+  .chat-dock input::placeholder { color: #a3a3a1; opacity: 1; }
+  .chat-dock:focus-within { border-color: rgba(255, 255, 255, 0.65); }
+  .chat-dock button {
+    display: grid;
+    place-items: center;
+    width: 2.15rem;
+    height: 2.15rem;
+    flex: none;
+    border: 1px solid rgba(255, 255, 255, 0.23);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #aaa;
+    cursor: not-allowed;
+  }
+  .chat-dock button svg { width: 1rem; height: 1rem; }
+  @media (max-width: 600px) {
+    .chat-dock { bottom: max(0.75rem, env(safe-area-inset-bottom)); border-radius: 1rem; }
+  }
+</style>
+
+
+
