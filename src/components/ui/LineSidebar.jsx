@@ -13,12 +13,14 @@ const FALLOFF_CURVES = {
 
 const DEFAULT_ITEMS = [
   'Overview',
-  'About',
-  'Work',
-  'Services',
+  'About me',
+  'Experience',
+  'Education',
+  'Projects',
+  'Stack',
   'Contact'
 ];
-const DEFAULT_HREFS = ['#top', '#about', '#work', '#capabilities', '#contact'];
+const DEFAULT_HREFS = ['#top', '#profile', '#experience', '#education', '#work', '#capabilities', '#contact'];
 const LineSidebar = ({
   items = DEFAULT_ITEMS,
   hrefs = DEFAULT_HREFS,
@@ -34,11 +36,11 @@ const LineSidebar = ({
   markerGap = 12,
   tickScale = 0.3,
   scaleTick = true,
-  itemGap = 35,
-  fontSize = 1.3,
+  itemGap = 26,
+  fontSize = 1.15,
   smoothing = 100,
   defaultActive = 0,
-  onItemClick,
+  onItemClick = undefined,
   className = ''
 }) => {
   const listRef = useRef(null);

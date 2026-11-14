@@ -1,185 +1,29 @@
-/* features/home/sections/Work.astro */
-.work {
-  max-width: none;
-  background: var(--color-surface);
-}
-
-.work-head,
-.projects {
-  max-width: var(--content-width);
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.work-head {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  font: 10px var(--font-mono);
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-
-.projects {
-  margin-top: 5rem;
-}
-
-.project,
-.project.reverse {
-  display: grid;
-  grid-template-columns: minmax(0, 1.22fr) minmax(0, .78fr);
-  gap: clamp(2rem, 7vw, 7rem);
-  align-items: center;
-  padding: 5rem 0;
-  border-top: 1px solid var(--color-border);
-}
-
-.project.reverse {
-  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
-}
-
-.project.reverse .visual {
-  order: 2;
-}
-
-.visual {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--color-border-strong);
-  border-radius: 0;
-  aspect-ratio: 1.35;
-  transition: transform .5s ease, box-shadow .5s ease;
-}
-
-.project:hover .visual {
-  box-shadow: 0 24px 60px #0004;
-  transform: scale(.985);
-}
-
-.blue { background: #5f6260; }
-.orange { background: #817e79; }
-.violet { background: #656764; }
-
-.window {
-  position: absolute;
-  inset: 19% 21%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  padding: 1.2rem;
-  border: 1px solid #ffffff2b;
-  background: #242625df;
-  box-shadow: 18px 18px #0003;
-}
-
-.window small,
-.violet > b em {
-  color: var(--color-accent);
-}
-
-.window i {
-  grid-column: span 2;
-  height: 3px;
-  background: #ffffff4d;
-}
-
-.orbit {
-  position: absolute;
-  top: 10%;
-  left: 15%;
-  width: 70%;
-  height: 80%;
-  border: 1px solid #211a1588;
-  border-radius: 50%;
-  transform: rotate(35deg);
-}
-
-.orbit.two {
-  left: 27%;
-  width: 45%;
-  transform: rotate(-35deg);
-}
-
-.orange strong {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  font-size: clamp(1.5rem, 3vw, 3rem);
-  letter-spacing: -.08em;
-  place-content: center;
-  text-align: center;
-}
-
-.orange strong small {
-  font: 10px var(--font-mono);
-  letter-spacing: .1em;
-}
-
-.violet > b {
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
-  font-size: clamp(2rem, 4vw, 4rem);
-  line-height: .82;
-  letter-spacing: -.08em;
-}
-
-.violet > b em {
-  font-style: normal;
-}
-
-.project h3 {
-  margin: 1.1rem 0;
-  font-size: clamp(2.5rem, 5vw, 5rem);
-  font-weight: 500;
-  line-height: .9;
-  letter-spacing: -.1em;
-}
-
-.project p {
-  max-width: 320px;
-  color: var(--color-project-copy);
-  line-height: 1.6;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .45rem;
-  margin-top: 1.8rem;
-}
-
-.tags span {
-  padding: .45rem .65rem;
-  border: 1px solid var(--color-border-strong);
-  border-radius: 999px;
-  color: var(--color-tag-copy);
-  font: 9px var(--font-mono);
-}
-
-@media (max-width: 54rem) {
-  .project,
-  .project.reverse {
-    grid-template-columns: 1fr;
-    gap: clamp(2rem, 6vw, 3.5rem);
-    align-items: stretch;
-    padding-block: clamp(3.5rem, 8vw, 5rem);
-  }
-
-  .project.reverse .visual {
-    order: 0;
-  }
-
-  .work-head {
-    display: block;
-  }
-
-  .work-head .label {
-    margin-top: 1.5rem;
-  }
-
-  .projects {
-    margin-top: 3rem;
-  }
+/* Project collection */
+.work { background: var(--color-surface); }
+.work-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.work-head .label { margin: 0; }
+.work-intro { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin: clamp(4rem, 9vw, 8rem) 0 4rem; }
+.work-intro h2 { margin: 0; font-size: clamp(3.5rem, 8vw, 8rem); font-weight: 500; letter-spacing: -.055em; line-height: .9; }
+.work-intro h2 span { color: var(--color-accent); }
+.work-intro p { max-width: 20rem; margin: 0; color: var(--color-project-copy); line-height: 1.65; }
+.projects { max-width: 72rem; margin-inline: auto; }
+.projects .scroll-stack__inner { padding-inline: 0; }
+.projects .scroll-stack-card { height: auto; min-height: 25rem; padding: clamp(1.5rem, 4vw, 3.5rem); border-radius: 1.25rem; background: var(--color-surface-solid); color: var(--color-text); box-shadow: 0 0 0 1px var(--color-border-strong), 0 1rem 3rem #0003; }
+.project-card__content { position: relative; display: flex; flex-direction: column; min-height: 18rem; height: 100%; }
+.project-card__top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .75rem; font: .65rem/1.5 var(--font-mono); color: var(--color-muted); text-transform: uppercase; letter-spacing: .06em; }
+.project-card__body { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; margin-block: auto; padding-block: 3rem 1rem; }
+.project-card h3 { margin: 0 0 1.25rem; font-size: clamp(2.6rem, 5vw, 5.5rem); line-height: .98; letter-spacing: -.055em; font-weight: 500; }
+.project-card__summary { max-width: 26rem; margin: 0; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.4; }
+.project-card__detail p { margin: 0; color: var(--color-project-copy); line-height: 1.7; }
+.tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.5rem; }
+.tags span { padding: .45rem .7rem; border: 1px solid var(--color-border-strong); border-radius: 999px; color: var(--color-tag-copy); font: .65rem/1.3 var(--font-mono); }
+.project-card__mark { position: absolute; top: 2.5rem; right: 0; color: var(--color-accent); font-size: 2rem; }
+.work-link { display: inline-flex; gap: 1.5rem; margin-top: 4rem; padding-bottom: .6rem; border-bottom: 1px solid currentColor; text-decoration: none; font-size: .9rem; }
+@media (max-width: 50rem) { .work-intro { display: block; } .work-intro p { margin-top: 2rem; } .project-card__body { grid-template-columns: 1fr; } }
+/* Tall content and reduced-motion users get a readable, unstacked list. */
+@media (max-width: 50rem), (max-height: 40rem), (prefers-reduced-motion: reduce) {
+  .projects .scroll-stack__slot { position: relative; top: auto !important; margin-bottom: 1rem !important; }
+  .projects .scroll-stack-card { transform: none !important; filter: none !important; }
+  .projects .scroll-stack-card__shade { opacity: 0 !important; }
+  .projects .scroll-stack__end { display: none; }
 }

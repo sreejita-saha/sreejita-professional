@@ -1,17 +1,14 @@
 ---
-import type { Capability } from '../data';
 import Section from '../../../components/ui/Section.astro';
-
-interface Props { capabilities: Capability[] }
-const { capabilities } = Astro.props;
+import { capabilities } from '../data';
 ---
-
-<!-- Homepage capabilities section. -->
 <Section class="capabilities" id="capabilities">
-  <div class="index">04 / CAPABILITIES</div>
+  <div class="index">06 / TOOLKIT</div>
   <div class="cap-body">
-    <h2 class="reveal">Good work sits<br /><span>in the details.</span></h2>
-    <div class="cap-list reveal">
+    <p class="label">Languages, frameworks and platforms</p>
+    <h2>Skills &amp; tools<span>.</span></h2>
+    <p class="toolkit-intro">A selection of the languages, frameworks and platforms I’ve used across university, internships and personal projects.</p>
+    <div class="cap-list">
       {capabilities.map((capability) => <div><small>{capability.number}</small><b>{capability.title}</b><p>{capability.description}</p></div>)}
     </div>
   </div>

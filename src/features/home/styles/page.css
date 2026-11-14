@@ -14,8 +14,9 @@
   padding-inline: max(var(--page-gutter), calc((100% - var(--content-width)) / 2));
 }
 
-@media (min-width: 56.01rem) {
+/* Reserve room for the fixed navigation, including its animated label shift. */
+@media (min-width: 56.01rem) and (min-height: 40.01rem) {
   .page-section {
-    padding-left: max(12rem, var(--page-gutter), calc((100% - var(--content-width)) / 2));
+    padding-left: max(17rem, var(--page-gutter), calc((100% - var(--content-width)) / 2));
   }
 }

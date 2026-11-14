@@ -7,7 +7,6 @@ import Capabilities from '../features/home/sections/Capabilities.astro';
 import Contact from '../features/home/sections/Contact.astro';
 import Hero from '../features/home/sections/Hero.astro';
 import Work from '../features/home/sections/Work.astro';
-import { capabilities, projects } from '../features/home/data';
 import '../styles/global.css';
 ---
 
@@ -24,8 +23,8 @@ import '../styles/global.css';
     <main id="top">
       <Hero />
       <About />
-      <Work projects={projects} />
-      <Capabilities capabilities={capabilities} />
+      <Work />
+      <Capabilities />
       <Contact />
     </main>
   </div>
