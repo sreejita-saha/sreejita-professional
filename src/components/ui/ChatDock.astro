@@ -49,6 +49,9 @@
     cursor: not-allowed;
   }
   .chat-dock button svg { width: 1rem; height: 1rem; }
+  @media (min-width: 56.01rem) {
+    .chat-dock { left: calc(50% + 6rem); width: min(42rem, calc(100% - 14rem)); }
+  }
   @media (max-width: 600px) {
     .chat-dock { bottom: max(0.75rem, env(safe-area-inset-bottom)); border-radius: 1rem; }
   }

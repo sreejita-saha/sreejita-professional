@@ -1,6 +1,7 @@
 /* features/home/sections/About.astro */
 .statement {
   display: grid;
+  margin-top: 20rem;
   grid-template-columns: minmax(9rem, 23%) minmax(0, 1fr);
   gap: clamp(2rem, 8vw, 8rem);
   border-top: 1px solid var(--color-border);

@@ -3,7 +3,7 @@
   --hero-gutter: clamp(1rem, 2vw, 2rem);
   position: relative;
   display: grid;
-  grid-template-rows: auto minmax(16rem, 1fr) auto;
+  grid-template-rows: auto 1fr;
   gap: clamp(2.5rem, 5vw, 5rem);
   min-height: 100svh;
   padding: clamp(6rem, 10vh, 8rem) var(--hero-gutter) clamp(2rem, 4vw, 3rem);
@@ -25,9 +25,15 @@
   pointer-events: none;
 }
 
+@media (min-width: 56.01rem) {
+  .hero {
+    padding-left: max(12rem, var(--hero-gutter));
+  }
+}
+
 .hero::before {
   position: absolute;
-  z-index: -1;
+  z-index: -10;
   inset: 0;
   opacity: .34;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.72'/%3E%3C/svg%3E");
@@ -69,9 +75,18 @@
 .signal-mark i:nth-child(2) { --angle: 60deg; }
 .signal-mark i:nth-child(3) { --angle: -60deg; }
 
+.hero-heading {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  min-height: calc(100svh - clamp(6rem, 10vh, 8rem) * 2);
+  width: 100%;
+}
+
 .hero-wordmark {
   width: min(94%, 1600px);
-  margin: 0;
+  margin: 2rem 0 0;
   justify-self: center;
   line-height: 0;
 }
@@ -86,12 +101,14 @@
 
 .hero-bottom {
   position: relative;
+  scroll-margin-top: 9rem;
   z-index: 1;
   display: grid;
   grid-template-columns: minmax(180px, 27%) minmax(0, 480px);
   gap: clamp(2rem, 13vw, 13rem);
   align-self: end;
   width: 100%;
+  margin-top: clamp(8rem, 18vh, 12rem);
   padding: 26px 0 31px;
   border-top: 1px solid #ffffff33;
 }
@@ -165,7 +182,7 @@
 
 @container (width < 45rem) {
   .hero {
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto;
     gap: clamp(2.5rem, 10vw, 4rem);
     min-height: auto;
     padding: 5.5rem var(--hero-gutter) 2rem;
@@ -179,8 +196,18 @@
     width: min(100%, 22rem);
   }
 
-  .hero-wordmark {
+  .hero-heading {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  min-height: 0;
+  width: 100%;
+}
+
+.hero-wordmark {
     width: 100%;
+    margin: 0;
   }
 
   .hero-bottom {
@@ -212,4 +239,3 @@
     margin-top: 23px;
   }
 }
-

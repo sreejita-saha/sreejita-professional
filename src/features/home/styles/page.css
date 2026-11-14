@@ -14,3 +14,9 @@
   padding-block: clamp(4.5rem, 10vw, 9rem);
   padding-inline: max(var(--page-gutter), calc((100vw - var(--content-width)) / 2));
 }
+
+@media (min-width: 56.01rem) {
+  .page-section {
+    padding-left: max(12rem, var(--page-gutter), calc((100vw - var(--content-width)) / 2));
+  }
+}
