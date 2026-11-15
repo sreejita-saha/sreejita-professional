@@ -2,7 +2,7 @@
 import './ChatDock.css';
 ---
 <div class="chat-dock" id="portfolio-chat">
-  <section class="chat-dock__panel" id="chat-panel" aria-label="Portfolio assistant" hidden>
+  <section class="chat-dock__panel" id="chat-panel" aria-label="Portfolio assistant" aria-hidden="true" inert>
     <div class="chat-dock__heading">
       <div><span>PORTFOLIO ASSISTANT</span></div>
       <button class="chat-dock__close" type="button" aria-label="Close chat">×</button>
@@ -12,7 +12,7 @@ import './ChatDock.css';
     </div>
   </section>
   <form class="chat-dock__input-wrap">
-    <input id="portfolio-question" aria-label="Ask about my work" type="text" placeholder="Ask about my work..." autocomplete="off" maxlength="200" required />
+    <input id="portfolio-question" aria-label="Ask about my work" aria-controls="chat-panel" aria-expanded="false" type="text" placeholder="Ask about my work..." autocomplete="off" maxlength="200" required />
     <button class="chat-dock__send" type="submit" aria-label="Send message">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
     </button>
@@ -33,15 +33,24 @@ import './ChatDock.css';
     message.scrollIntoView({ block: 'nearest' });
     return message;
   }
+  function setOpen(open: boolean) {
+    if (!panel || !dock) return;
+    dock.classList.toggle('is-open', open);
+    panel.inert = !open;
+    panel.setAttribute('aria-hidden', String(!open));
+    input?.setAttribute('aria-expanded', String(open));
+  }
   dock?.querySelector<HTMLButtonElement>('.chat-dock__close')?.addEventListener('click', () => {
-    if (panel) panel.hidden = true;
+    input?.focus({ preventScroll: true });
+    setOpen(false);
   });
-  input?.addEventListener('focus', () => { if (panel) panel.hidden = false; });
+  input?.addEventListener('focus', () => setOpen(true));
+  input?.addEventListener('click', () => setOpen(true));
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();
     const question = input?.value.trim();
     if (!question || !input || !send || !panel) return;
-    panel.hidden = false;
+    setOpen(true);
     addMessage(question, 'visitor');
     input.value = '';
     input.disabled = true;
