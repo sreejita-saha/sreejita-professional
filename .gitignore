@@ -10,3 +10,9 @@ dist/
 
 # Previous dependency installation backup
 node_modules.broken/
+
+# Secrets
+.env
+.env.*
+!.env.example
+.vercel/

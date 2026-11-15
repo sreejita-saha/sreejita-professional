@@ -3,22 +3,30 @@
   border-top: 1px solid var(--color-border);
 }
 
-.cap-body { max-width: 72rem; }
+.cap-body {
+  max-width: 72rem;
+}
 
 .capabilities h2 {
   max-width: 810px;
   margin: 3rem 0 2rem;
   font-size: clamp(3rem, 7vw, 7.2rem);
   font-weight: 500;
-  line-height: .9;
-  letter-spacing: -.055em;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
 }
 
 .capabilities h2 span {
   color: var(--color-accent);
 }
 
-.toolkit-intro { max-width: 42rem; margin: 0 0 3rem; color: var(--color-project-copy); font-size: 1.1rem; line-height: 1.7; }
+.toolkit-intro {
+  max-width: 42rem;
+  margin: 0 0 3rem;
+  color: var(--color-project-copy);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
 
 .cap-list {
   border-top: 1px solid var(--color-border);
@@ -26,7 +34,7 @@
 
 .cap-list div {
   display: grid;
-  grid-template-columns: 2.5rem minmax(10rem, .7fr) minmax(0, 1.3fr);
+  grid-template-columns: 2.5rem minmax(10rem, 0.7fr) minmax(0, 1.3fr);
   gap: 1.25rem;
   align-items: start;
   padding: 2rem 0;
@@ -35,31 +43,31 @@
 
 .cap-list small {
   color: var(--color-accent);
-  font: .75rem/1.7 var(--font-mono);
+  font: 0.75rem/1.7 var(--font-mono);
 }
 
 .cap-list b {
   font-weight: 500;
   font-size: clamp(1.2rem, 1.6vw, 1.5rem);
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
 }
 
 .cap-list ul {
   display: flex;
   flex-wrap: wrap;
-  gap: .55rem;
+  gap: 0.55rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .cap-list li {
-  padding: .55rem .8rem;
+  padding: 0.55rem 0.8rem;
   border: 1px solid var(--color-border-strong);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background: var(--color-surface-solid);
   color: var(--color-text);
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.4;
 }
 
@@ -71,8 +79,13 @@
   .capabilities h2 {
     margin: 3rem 0;
     line-height: 1;
-    letter-spacing: -.06em;
+    letter-spacing: -0.06em;
   }
-  .cap-list div { grid-template-columns: 2rem minmax(0, 1fr); gap: .75rem; }
-  .cap-list ul { grid-column: 2; }
+  .cap-list div {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+  .cap-list ul {
+    grid-column: 2;
+  }
 }

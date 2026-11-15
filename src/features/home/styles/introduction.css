@@ -9,9 +9,9 @@
   background-color: #e3e3e3;
   padding: 0.15rem 1rem;
   border-radius: 1rem;
-  opacity: .58;
-  font: 500 clamp(.85rem, 1.45vw, 1.7rem)/1.5 var(--font-mono);
-  letter-spacing: .14em;
+  opacity: 0.58;
+  font: 500 clamp(0.85rem, 1.45vw, 1.7rem)/1.5 var(--font-mono);
+  letter-spacing: 0.14em;
   text-align: left;
   text-transform: uppercase;
   white-space: nowrap;
@@ -27,12 +27,18 @@
 }
 
 @keyframes type-introduction {
-  from { clip-path: inset(0 100% 0 0); }
-  to { clip-path: inset(0 0 0 0); }
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-introduction-writing { animation: none; }
+  .hero-introduction-writing {
+    animation: none;
+  }
 }
 
 @media (max-width: 56rem) {
@@ -41,9 +47,9 @@
     transform: none;
     justify-self: center;
     margin-bottom: 1.25rem;
-    padding-inline: .7rem;
-    font-size: clamp(.55rem, 2.5vw, .75rem);
-    letter-spacing: .1em;
+    padding-inline: 0.7rem;
+    font-size: clamp(0.55rem, 2.5vw, 0.75rem);
+    letter-spacing: 0.1em;
     white-space: normal;
     text-align: center;
   }

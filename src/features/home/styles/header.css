@@ -10,7 +10,7 @@
   padding-inline: var(--page-gutter);
   color: var(--color-on-dark);
   font: 10px var(--font-mono);
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
   pointer-events: none;
 }
 
@@ -18,16 +18,34 @@
   position: absolute;
   z-index: -1;
   inset: 0 0 -50px;
-  background: linear-gradient(180deg, rgb(20 20 20 / 25%) 0%, rgb(20 20 20 / 14%) 45%, transparent 100%);
+  background: linear-gradient(
+    180deg,
+    rgb(20 20 20 / 25%) 0%,
+    rgb(20 20 20 / 14%) 45%,
+    transparent 100%
+  );
   backdrop-filter: blur(calc(var(--header-progress, 0) * 9px));
   -webkit-backdrop-filter: blur(calc(var(--header-progress, 0) * 9px));
-  mask-image: linear-gradient(180deg, #000 0%, rgb(0 0 0 / 70%) 35%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgb(0 0 0 / 70%) 35%, transparent 100%);
+  mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    rgb(0 0 0 / 70%) 35%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    rgb(0 0 0 / 70%) 35%,
+    transparent 100%
+  );
   opacity: var(--header-progress, 0);
-  content: '';
+  content: "";
 }
 
-.nav a { text-decoration: none; pointer-events: auto; }
+.nav a {
+  text-decoration: none;
+  pointer-events: auto;
+}
 .brand {
   display: inline-flex;
   align-items: center;
@@ -35,9 +53,13 @@
   width: 28px;
   height: 28px;
   justify-self: start;
-  opacity: calc(1 - var(--header-progress, 0) * .45);
+  opacity: calc(1 - var(--header-progress, 0) * 0.45);
 }
-.brand img { display: block; width: 100%; height: 100%; }
+.brand img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
 .floating-wordmark {
   position: fixed;
@@ -53,12 +75,17 @@
   display: block;
   width: 100%;
   height: auto;
-  opacity: var(--wordmark-opacity, .58);
-  filter: grayscale(1) invert(1) brightness(1.22) contrast(.82);
+  opacity: var(--wordmark-opacity, 0.58);
+  filter: grayscale(1) invert(1) brightness(1.22) contrast(0.82);
 }
-.floating-wordmark:focus-visible { outline: 1px solid #ffffffb3; outline-offset: 2px; }
+.floating-wordmark:focus-visible {
+  outline: 1px solid #ffffffb3;
+  outline-offset: 2px;
+}
 
 @media (max-width: 56rem) {
-  .nav { grid-template-columns: 1fr auto; min-height: 48px; }
+  .nav {
+    grid-template-columns: 1fr auto;
+    min-height: 48px;
+  }
 }
-

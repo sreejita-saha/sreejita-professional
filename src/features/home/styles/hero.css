@@ -18,10 +18,15 @@
   z-index: -2;
   inset: 0;
   background:
-    linear-gradient(180deg, rgb(9 10 9 / 28%) 0%, rgb(9 10 9 / 18%) 37%, rgb(5 6 5 / 92%) 100%),
-    url('/hero-background.png') center / cover no-repeat;
-  content: '';
-  filter: blur(14px) brightness(.55) contrast(.92);
+    linear-gradient(
+      180deg,
+      rgb(9 10 9 / 28%) 0%,
+      rgb(9 10 9 / 18%) 37%,
+      rgb(5 6 5 / 92%) 100%
+    ),
+    url("/hero-background.png") center / cover no-repeat;
+  content: "";
+  filter: blur(14px) brightness(0.55) contrast(0.92);
   pointer-events: none;
 }
 
@@ -29,17 +34,16 @@
   .hero {
     padding-left: max(12rem, var(--hero-gutter));
   }
-
 }
 
 .hero::before {
   position: absolute;
   z-index: -10;
   inset: 0;
-  opacity: .34;
+  opacity: 0.34;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.72'/%3E%3C/svg%3E");
   background-size: 160px 160px;
-  content: '';
+  content: "";
   mix-blend-mode: soft-light;
   pointer-events: none;
 }
@@ -52,7 +56,7 @@
 
 .hero-copy p {
   margin: 11px 0 0;
-  font-size: clamp(10px, .8vw, 12px);
+  font-size: clamp(10px, 0.8vw, 12px);
   line-height: 1.05;
 }
 
@@ -72,9 +76,15 @@
   transform: translateY(-50%) rotate(var(--angle));
 }
 
-.signal-mark i:nth-child(1) { --angle: 0deg; }
-.signal-mark i:nth-child(2) { --angle: 60deg; }
-.signal-mark i:nth-child(3) { --angle: -60deg; }
+.signal-mark i:nth-child(1) {
+  --angle: 0deg;
+}
+.signal-mark i:nth-child(2) {
+  --angle: 60deg;
+}
+.signal-mark i:nth-child(3) {
+  --angle: -60deg;
+}
 
 .hero-heading {
   position: relative;
@@ -104,8 +114,8 @@
   display: block;
   width: 100%;
   height: auto;
-  opacity: .58;
-  filter: grayscale(1) invert(1) brightness(1.22) contrast(.82);
+  opacity: 0.58;
+  filter: grayscale(1) invert(1) brightness(1.22) contrast(0.82);
 }
 
 .hero-bottom {
@@ -138,7 +148,7 @@
   display: block;
   margin-top: 19px;
   font-size: clamp(2rem, 3.1vw, 3.5rem);
-  letter-spacing: -.09em;
+  letter-spacing: -0.09em;
 }
 
 .hero-stat p {
@@ -158,8 +168,8 @@
   margin: 0 0 25px;
   font-size: clamp(1.25rem, 2.2vw, 2.4rem);
   font-weight: 600;
-  line-height: .95;
-  letter-spacing: -.075em;
+  line-height: 0.95;
+  letter-spacing: -0.075em;
 }
 
 .hero-manifesto > p + p {
@@ -198,7 +208,7 @@
   }
 
   .hero::after {
-    filter: blur(10px) brightness(.48) contrast(.92);
+    filter: blur(10px) brightness(0.48) contrast(0.92);
   }
 
   .hero-copy {
@@ -206,15 +216,15 @@
   }
 
   .hero-heading {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  min-height: 0;
-  width: 100%;
-}
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    min-height: 0;
+    width: 100%;
+  }
 
-.hero-wordmark {
+  .hero-wordmark {
     width: 100%;
     margin: 0;
     left: 0;
@@ -244,7 +254,7 @@
   .hero-manifesto > p {
     margin-bottom: 18px;
     font-size: clamp(1.22rem, 5vw, 1.7rem);
-    line-height: .96;
+    line-height: 0.96;
   }
 
   .signature {
