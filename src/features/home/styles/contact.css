@@ -1,87 +1,77 @@
-/* features/home/sections/Contact.astro */
-.contact {
+﻿.contact {
   max-width: none;
-  background: var(--color-contact);
-  color: var(--color-ink-on-light);
+  padding-top: clamp(5rem, 8vw, 8rem);
+  padding-bottom: max(10rem, env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  background: #111211;
+  color: #e8e9e5;
 }
-
-.contact .index,
-.contact .label,
-.contact-title span {
-  color: var(--color-accent-strong);
-}
-
-.contact-title {
-  margin: clamp(3rem, 6vw, 5rem) 0 2.5rem;
-  font-size: clamp(2.1rem, 10vw, 11rem);
-  font-weight: 600;
-  line-height: 0.8;
-  letter-spacing: -0.12em;
-}
-
-.contact-intro {
-  margin: 0 0 2rem;
-  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
-  line-height: 1.6;
-}
-.contact-links {
+.contact-topline, .contact-footer {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-.contact-links a {
-  display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 0.3rem;
-}
-
-.email {
-  display: inline-flex;
-  gap: 0.5rem;
-  align-items: center;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-ink-on-light);
-  font-size: 1.25rem;
-  text-decoration: none;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
-
-.email svg {
-  flex: none;
-}
-
-.contact footer {
-  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 6rem;
-  font: 10px var(--font-mono);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  gap: 1rem;
+  color: #989b95;
+  font: .68rem/1.5 var(--font-mono);
+  letter-spacing: .06em;
 }
-
-.contact {
-  padding-bottom: max(clamp(4.5rem, 10vw, 9rem), 8rem);
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: start;
+  margin-top: clamp(4rem, 8vw, 8rem);
 }
-
+.contact-heading h2 {
+  margin: 0;
+  font-size: clamp(5rem, 10vw, 10rem);
+  font-weight: 500;
+  line-height: .9;
+  letter-spacing: -.075em;
+}
+.contact-heading h2 span { color: #858982; }
+.contact-heading p {
+  margin: 2rem 0 0;
+  color: #aaada7;
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.65;
+}
+.contact-details { border-top: 1px solid #ffffff38; }
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  min-height: 5.5rem;
+  padding: 1.1rem .1rem;
+  border-bottom: 1px solid #ffffff2b;
+  color: #e8e9e5;
+  text-decoration: none;
+  transition: color .2s ease, padding .2s ease;
+}
+.contact-row > span { min-width: 0; }
+.contact-row small {
+  display: block;
+  margin-bottom: .45rem;
+  color: #969992;
+  font: .6rem/1.3 var(--font-mono);
+  letter-spacing: .08em;
+}
+.contact-row strong { font-size: clamp(.95rem, 1.3vw, 1.2rem); font-weight: 400; overflow-wrap: anywhere; }
+.contact-row svg { flex: none; color: #a9aca6; }
+.contact-row:hover { padding-inline: .55rem; color: #fff; }
+.contact-row:focus-visible, .contact-footer a:focus-visible { outline: 1px solid #fff; outline-offset: 4px; }
+.contact-row__format { margin-left: .45rem; color: #969992; font: .65rem/1 var(--font-mono); }
+.contact-footer { margin-top: clamp(5rem, 10vw, 9rem); padding-top: 1.4rem; border-top: 1px solid #ffffff2b; }
+.contact-footer a { display: inline-flex; align-items: center; gap: .5rem; color: inherit; text-decoration: none; }
+.contact-footer a:hover { color: #fff; }
 @media (max-width: 50rem) {
-  .contact-title {
-    line-height: 1;
-    letter-spacing: -0.06em;
-  }
-  .contact footer {
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 5rem;
-  }
-
-  .contact {
-    padding-bottom: max(clamp(4.5rem, 10vw, 9rem), 11rem);
-  }
+  .contact { padding-bottom: 12rem; }
+  .contact-topline span:last-child { display: none; }
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; margin-top: 4rem; }
+  .contact-heading h2 { font-size: clamp(4.5rem, 19vw, 7rem); }
+  .contact-heading p { margin-top: 1.5rem; }
+  .contact-row { min-height: 5rem; }
 }
+@media (prefers-reduced-motion: reduce) { .contact-row { transition: none; } }

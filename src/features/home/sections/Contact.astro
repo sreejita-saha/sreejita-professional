@@ -1,15 +1,20 @@
----
-import { ArrowUp, ArrowUpRight } from 'lucide-astro';
+﻿---
+import { ArrowUp, ArrowUpRight, Download } from 'lucide-astro';
 import Section from '../../../components/ui/Section.astro';
 ---
-<Section class="contact" id="contact">
-  <div class="index">07 / GET IN TOUCH</div>
-  <div>
-    <p class="label">Contact</p>
-    <h2 class="contact-title">Get in touch<span>.</span></h2>
-    <p class="contact-intro">I’d love to hear about what you’re working on.</p>
-    <a class="email" href="mailto:sreejita_saha@outlook.com">sreejita_saha@outlook.com <ArrowUpRight size={22} /></a>
-    <div class="contact-links"><a href="https://www.linkedin.com/in/sreejita-s">LinkedIn <ArrowUpRight size={16} /></a><a href="https://github.com/sreejita-saha">GitHub <ArrowUpRight size={16} /></a></div>
+<Section class="contact" id="contact" labelledBy="contact-title">
+  <div class="contact-topline"><span>07 / CONTACT</span><span>THANKS FOR STOPPING BY</span></div>
+  <div class="contact-layout">
+    <div class="contact-heading">
+      <h2 id="contact-title">Hello<span>.</span></h2>
+      <p>Thanks for taking a look around.<br />You can find me here ↓</p>
+    </div>
+    <div class="contact-details" aria-label="Contact links">
+      <a class="contact-row" href="mailto:sreejita_saha@outlook.com"><span><small>EMAIL</small><strong>sreejita_saha@outlook.com</strong></span><ArrowUpRight size={20} aria-hidden="true" /></a>
+      <a class="contact-row" href="https://www.linkedin.com/in/sreejita-s"><span><small>CONNECT</small><strong>LinkedIn</strong></span><ArrowUpRight size={20} aria-hidden="true" /></a>
+      <a class="contact-row" href="https://github.com/sreejita-saha"><span><small>MORE WORK</small><strong>GitHub</strong></span><ArrowUpRight size={20} aria-hidden="true" /></a>
+      <a class="contact-row" href="/docs/Sreejita_Saha_CV.pdf" download><span><small>DOWNLOAD</small><strong>My CV <span class="contact-row__format">PDF</span></strong></span><Download size={19} aria-hidden="true" /></a>
+    </div>
   </div>
-  <footer><span>© Sreejita / 2026</span><span>Built with intention</span><a href="#top">Back to top <ArrowUp size={12} /></a></footer>
+  <footer class="contact-footer"><span>© SREEJITA / 2026</span><a href="#top">BACK TO TOP <ArrowUp size={13} aria-hidden="true" /></a></footer>
 </Section>
