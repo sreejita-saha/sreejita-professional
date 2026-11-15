@@ -11,7 +11,6 @@ export default function ProjectStack({ projects }) {
               <div><h3>{project.name}</h3><p className="project-card__summary">{project.description}</p></div>
               <div className="project-card__detail"><p>{project.details}</p><div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
             </div>
-            <div className="project-card__mark" aria-hidden="true">✳</div>
           </article>
         </ScrollStackItem>
       ))}
