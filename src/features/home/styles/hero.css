@@ -337,3 +337,8 @@
   .hero-bottom__label { gap: 1rem; }
   .hero-bottom__label span:last-child { text-align: right; }
 }
+
+@media (max-width: 56rem) {
+  .hero { padding-top: 8rem; }
+  .hero-manifesto h2 { overflow-wrap: normal; }
+}

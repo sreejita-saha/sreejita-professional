@@ -174,3 +174,37 @@
     padding-block: 0.5rem;
   }
 }
+
+/* On touch screens, keep navigation away from the chat composer. */
+@media (max-width: 56rem) {
+  .line-sidebar {
+    position: fixed;
+    top: 48px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    display: block;
+    padding: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    background: #141514ed;
+    transform: none;
+  }
+  .line-sidebar::-webkit-scrollbar { display: none; }
+  .line-sidebar__list {
+    width: max-content;
+    min-width: 100%;
+    max-width: none;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    gap: .25rem;
+    padding: 0 .5rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .line-sidebar__item { flex: none; }
+  .line-sidebar__item a { padding-inline: .6rem; }
+  .line-sidebar__label { font-size: .72rem; white-space: nowrap; }
+}

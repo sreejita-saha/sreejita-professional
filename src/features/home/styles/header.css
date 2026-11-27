@@ -89,3 +89,7 @@
     min-height: 48px;
   }
 }
+
+@media (max-width: 56rem) {
+  .nav { background: #141514ed; }
+}

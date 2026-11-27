@@ -158,3 +158,23 @@
 @media (prefers-reduced-motion: reduce) {
   .chat-dock__panel, .chat-dock__input-wrap, .chat-dock button { transition: none; }
 }
+
+@media (max-width: 56rem) {
+  .chat-dock { width: min(28rem, calc(100% - 1.25rem)); }
+  .chat-dock input { font-size: 1rem; }
+  .chat-dock__panel {
+    display: flex;
+    flex-direction: column;
+    max-height: min(60dvh, 28rem);
+    background: rgb(35 36 35 / 0.97);
+  }
+  .chat-dock__heading { flex: none; padding: .75rem 1rem; }
+  .chat-dock__close { width: 2.75rem; height: 2.75rem; }
+  .chat-dock__messages {
+    min-height: 0;
+    max-height: none;
+    padding: 1rem;
+    overscroll-behavior: contain;
+  }
+  .chat-dock__message { max-width: 100%; font-size: .9rem; }
+}

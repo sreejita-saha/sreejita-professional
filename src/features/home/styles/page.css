@@ -33,3 +33,9 @@
     );
   }
 }
+
+@media (max-width: 56rem) {
+  .page-section, .hero-bottom { scroll-margin-top: 6.5rem; }
+  .page-section { padding-block: 4rem; }
+  .contact { padding-bottom: max(7rem, calc(env(safe-area-inset-bottom) + 6rem)); }
+}
