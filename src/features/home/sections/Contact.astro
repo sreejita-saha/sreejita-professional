@@ -3,6 +3,9 @@ import { ArrowUp, ArrowUpRight, Download } from 'lucide-astro';
 import Section from '../../../components/ui/Section.astro';
 ---
 <Section class="contact" id="contact" labelledBy="contact-title">
+  <div class="contact-background" aria-hidden="true">
+    <video class="contact-background__video" muted loop playsinline preload="none" data-src="/videos/ocean2.mp4"></video>
+  </div>
   <div class="contact-topline"><span>06 / CONTACT</span><span>THANKS FOR STOPPING BY</span></div>
   <div class="contact-layout">
     <div class="contact-heading">
@@ -18,3 +21,32 @@ import Section from '../../../components/ui/Section.astro';
   </div>
   <footer class="contact-footer"><span>© SREEJITA / 2026</span><a href="#top">BACK TO TOP <ArrowUp size={13} aria-hidden="true" /></a></footer>
 </Section>
+
+<script>
+  const video = document.querySelector<HTMLVideoElement>('.contact-background__video');
+  const section = document.querySelector<HTMLElement>('#contact');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (video && section) {
+    let visible = false;
+    const update = () => {
+      if (!visible || reducedMotion.matches || document.hidden) {
+        video.pause();
+        return;
+      }
+      if (!video.src && video.dataset.src) video.src = video.dataset.src;
+      void video.play().catch(() => {});
+    };
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        visible = entries.some(entry => entry.isIntersecting);
+        update();
+      }, { rootMargin: '200px' });
+      observer.observe(section);
+    } else {
+      visible = true;
+      update();
+    }
+    reducedMotion.addEventListener('change', update);
+    document.addEventListener('visibilitychange', update);
+  }
+</script>
