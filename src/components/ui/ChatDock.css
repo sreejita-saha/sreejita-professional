@@ -3,7 +3,7 @@
   z-index: 100;
   bottom: max(1.5rem, env(safe-area-inset-bottom));
   left: 50%;
-  width: min(70rem, calc(100% - 2rem));
+  width: min(60rem, calc(100% - 2rem));
   transform: translateX(-50%);
   color: #f3f3f1;
 }
@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   gap: .75rem;
-  padding: 1.1rem 1.2rem 1.1rem 1.5rem;
+  padding: .7rem .8rem .7rem 1.25rem;
   border: 1px solid rgba(255, 255, 255, .24);
   border-radius: 999px;
   background: rgba(40, 39, 39, 0.82);
@@ -30,7 +30,7 @@
   outline: 0;
   background: transparent;
   color: #f3f3f1;
-  font: 400 1.2rem/1.4 var(--font-sans);
+  font: 400 1rem/1.4 var(--font-sans);
 }
 .chat-dock input::placeholder { color: #a3a3a1; opacity: 1; }
 .chat-dock button { display: grid; place-items: center; flex: none; cursor: pointer; }
