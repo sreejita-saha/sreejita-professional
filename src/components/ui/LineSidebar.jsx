@@ -12,7 +12,6 @@ const FALLOFF_CURVES = {
 };
 
 const DEFAULT_ITEMS = [
-  'Overview',
   'About me',
   'Experience',
   'Education',
@@ -20,7 +19,7 @@ const DEFAULT_ITEMS = [
   'Stack',
   'Contact'
 ];
-const DEFAULT_HREFS = ['#top', '#profile', '#experience', '#education', '#work', '#capabilities', '#contact'];
+const DEFAULT_HREFS = ['#profile', '#experience', '#education', '#work', '#capabilities', '#contact'];
 const LineSidebar = ({
   items = DEFAULT_ITEMS,
   hrefs = DEFAULT_HREFS,

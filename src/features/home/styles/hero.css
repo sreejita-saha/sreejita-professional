@@ -295,3 +295,45 @@
     margin-top: 23px;
   }
 }
+
+/* About content shares the dark hero surface. */
+.hero-bottom {
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  margin-top: clamp(3rem, 8vh, 6rem);
+}
+.hero-bottom__label {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+.hero-about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 7rem);
+  align-items: start;
+}
+.hero-manifesto .profile-intro p {
+  margin: 0 0 1.25rem;
+  color: #c3c6c0;
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
+  line-height: 1.7;
+}
+.hero-manifesto .profile-intro p:first-child {
+  color: #f0f1ed;
+  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
+  line-height: 1.55;
+}
+.hero-manifesto .about-focus {
+  margin-top: clamp(2rem, 4vw, 4rem);
+  border-color: #ffffff33;
+  color: #f0f1ed;
+}
+.hero-manifesto .about-focus .label,
+.hero-manifesto .about-focus p span { color: #a7aaa4; }
+@media (max-width: 56rem) {
+  .hero-bottom { gap: 2.5rem; margin-top: 1rem; }
+  .hero-about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-bottom__label { gap: 1rem; }
+  .hero-bottom__label span:last-child { text-align: right; }
+}
